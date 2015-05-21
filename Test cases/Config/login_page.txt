@@ -1,0 +1,37 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${Username_id}    login_ID
+${Password_id}    iLogin_pwd
+${Domain_id}      domain_ID
+${remember_checkbox_id}    login_remember_me
+${Sign_in_id}     login_submit
+
+*** Keywords ***
+Open Login page
+    Open Browser    ${GMC_URL}    ${BROWSER}
+    Maximize Browser Window
+
+Input Username
+    Input Text    ${Username_id}    ${Username}
+
+Input Password
+    Input Text    ${Password_id}    ${Password}
+
+Input Domain
+    Input Text    ${Domain_id}    ${Domain}
+
+Enable Remember checkbox
+    Check Box should be selected    ${remember_checkbox_id}
+
+Click Sign In button
+    Click Button    ${Sign_in_id}
+
+Login GMC
+    Open Login page
+    Input Username
+    Input Password
+    Input Domain
+    Click Sign In button

@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${home_tab}       home_tab
+
+*** Keywords ***
+Open Home tab
+    Click Element    ${home_tab}

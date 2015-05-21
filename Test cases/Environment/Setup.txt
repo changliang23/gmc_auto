@@ -1,0 +1,13 @@
+*** Settings ***
+Resource          ../Config/general_resource.txt
+
+*** Test Cases ***
+Install
+    [Tags]    p0    Environment
+    Execute    service    StartRDP    30
+
+Uninstall
+
+Upgrade
+
+Repair

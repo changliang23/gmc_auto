@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${roles_tab}      roles_tab
+
+*** Keywords ***
+Open Roles tab
+    Click Element    ${roles_tab}

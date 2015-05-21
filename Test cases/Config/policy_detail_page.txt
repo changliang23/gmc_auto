@@ -1,0 +1,46 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${Summary_tab}    /html/body/form/div[1]/div/ul[1]/li/a
+${Authentication_tab}    /html/body/form/div[1]/div/ul[2]/li[1]/a
+${Messaging_tab}    /html/body/form/div[1]/div/ul[2]/li[2]/a
+${File_Handling_tab}    /html/body/form/div[1]/div/ul[2]/li[3]/a
+${GMA_tab}        /html/body/form/div[1]/div/ul[2]/li[4]/a
+${Provisioning_tab}    /html/body/form/div[1]/div/ul[2]/li[5]/a
+${iOS_Config_tab}    /html/body/form/div[1]/div/ul[3]/li[1]/a
+${Android_Config_tab}    /html/body/form/div[1]/div/ul[3]/li[2]/a
+${Compliance_Manager_tab}    /html/body/form/div[1]/div/ul[3]/li[3]/a
+${App_Management_tab}    /html/body/form/div[1]/div/ul[4]/li/a
+
+*** Keywords ***
+Summary
+    Click link    ${Summary_tab}
+
+Authentication
+    Click link    ${Authentication_tab}
+
+Messaging
+    Click link    ${Messaging_tab}
+
+File Handling
+    Click link    ${File_Handling_tab}
+
+GMA
+    Click link    ${GMA_tab}
+
+Provisioning
+    Click link    ${Provisioning_tab}
+
+iOS config
+    Click link    ${iOS_Config_tab}
+
+Android config
+    Click link    ${Android_Config_tab}
+
+Compliance Manager
+    Click link    ${Compliance_Manager_tab}
+
+App Management
+    Click link    ${App_Management_tab}

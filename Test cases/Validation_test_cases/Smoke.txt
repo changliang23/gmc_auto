@@ -1,0 +1,15 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Config/login_page.txt
+Resource          ../Config/policy_page.txt
+
+*** Test Cases ***
+Create new policy set
+    Login GMC
+    Open Policies tab
+    Click Create button
+    sleep    2
+    Input policy name
+    Input policy description
+    sleep    2
+    Click Ok button

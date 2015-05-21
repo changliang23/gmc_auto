@@ -1,0 +1,8 @@
+*** Variables ***
+${GMC_URL}        https://mhaovm011:8443
+${BROWSER}        chrome
+${Username}       svcbang
+${Password}       svc
+${Domain}         asia
+${Policy_name}    lchang-test
+${Policy_description}    lchang-description

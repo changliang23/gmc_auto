@@ -1,0 +1,43 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${policy_tab}     policies_tab
+${Policy_set_link}    //a[@href='policies.do' and @class='entitylist_label policyseticon']
+${Policy_template_link}    //a[@href='policyTemplates.do' and @class='entitylist_label policytemplateicon']
+${Create_button}    addButton1
+${Manual_button}    /html/body/form[3]/div/div[1]/table[1]/tbody/tr[1]/td/label/input
+${Import_button}    /html/body/form[3]/div/div[1]/table[2]/tbody/tr[1]/td/label/b
+${New_name}       policyName
+${New_description}    policyDescription
+${Ok_button}      Ok
+${Cancel_button}    Cancel
+${Copy_button}    copyButton1
+${Delete_button}    deleteButton1
+${Export_button}    exportButton1
+
+*** Keywords ***
+Open Policies tab
+    Click Element    ${policy_tab}
+
+Go to Policy Sets
+    Click link    ${Policy_set_link}
+
+Go to Policy Template
+    Click link    ${Policy_template_link}
+
+Click Create button
+    Click Element    ${Create_button}
+
+Input policy name
+    Input text    ${New_name}    ${Policy_name}
+
+Input policy description
+    Input Text    ${New_description}    ${Policy_description}
+
+Click Ok button
+    Click button    ${Ok_button}
+
+Click Cancel button
+    Click button    ${Cancel_button}

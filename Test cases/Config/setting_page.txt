@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${setting_tab}    settings_tab
+
+*** Keywords ***
+Open Settings tab
+    Click Element    ${setting_tab}
