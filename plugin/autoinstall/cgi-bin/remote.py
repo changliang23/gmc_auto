@@ -25,7 +25,7 @@ elif command == "downgrade":
 elif command == 'getinstalllog':
     result, data = get_install_log()
 elif command == 'dumpgemsinstalllog':
-    result, data = dump_gems_install_log()
+    result, data = dump_gmc_install_log()
 elif command == "configAutoIT":
     result, data = config_autoit((form['fields'].value))
 elif command == "changeinstalltype":
@@ -34,14 +34,14 @@ elif command == "checkwebsitevalid":
     result, data = checkwebsitevalid((int)(form['timeout'].value))
 elif command == "changeBuildUrl":
     result, data = changeBuildUrl((form['url'].value))
-elif command == "karaf":
-    result, data = execute_karaf_command(form['cmd'].value)
+elif command == "webservice":
+    result, data = execute_webservice_command(form['cmd'].value)
 elif command == "computername":
     result, data = get_computer_name()
 elif command == "removegemsbyconsole":
-    result, data = console_remove_gems()
-elif command == "zipgemslog":
-    result, data = zip_gems_log()
+    result, data = console_remove_gmc()
+elif command == "zipgmclog":
+    result, data = zip_gmc_log()
 elif command == "checkonline":
     result = "True"
     data = ""

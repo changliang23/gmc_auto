@@ -1,0 +1,234 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${Add_handheld}    addHandheld
+${Add_additional_handheld}    additionalHandhelds
+${Delete_handheld}    deleteHandheld
+${View_OTA}       viewPIN
+${MDM_profile}    installMDMProfile
+${Lock_GFE}       lockHandheld
+${Wipe_GFE}       wipeHandheld
+${Reset_GFE}      forceResync
+${Set_policy}     setHandheldsPolicySet
+${Send_notification}    sendEmails
+${Move_HH_GMMS}    moveHandheld
+${Move_HH_GMC}    moveHandheldRemote
+${Manage_device_settings}    manageDeviceGeneralSettings
+${Send_server_logs}    uploadServerLogs
+${Send_GFE_logs}    requestHandheldLogs
+${Control_logging}    handheldDetailedLogging
+${View_policy_sets}    viewPolicySet
+${Manage_policy}    manageHandheldPolicy
+${Manage_HH_auth}    manageSecurityPolicy
+${View_settings}    viewSettings
+${Manage_email_temp}    manageEmailTemplates
+${Manage_cert}    manageCertificates
+${Manage_GMC_relationship}    manageGMCServers
+${Manage_software}    manageCustomSoftware
+${Cisco_ISE}      manageIse
+${View_Servers}    viewServers
+${Manage_servers}    manageServers
+${View_enterprise_servers}    gcsView
+${Manage_enterprise_servers}    gcsManage
+${Manage_roles}    manageRoles
+${Update_button}    role_rights_save2
+${Cancel_button}    role_rights_cancel
+
+*** Keywords ***
+Select View-only
+    Select Radio Button    type    viewOnly
+
+Select All Rights
+    Select Radio Button    type    all
+
+Select Custom
+    Select Radio Button    type    custom
+
+Enable Add HH
+    Select Checkbox    ${Add_handheld}
+
+Disable Add HH
+    Unselect Checkbox    ${Add_handheld}
+
+Enable Add additional HH
+    Select Checkbox    ${Add_additional_handheld}
+
+Disable Add additional HH
+    Unselect Checkbox    ${Add_additional_handheld}
+
+Enable Delete HH
+    Select Checkbox    ${Delete_handheld}
+
+Disable Delete HH
+    Unselect Checkbox    ${Delete_handheld}
+
+Enable View OTA
+    Select Checkbox    ${View_OTA}
+
+Disable View OTA
+    Unselect Checkbox    ${View_OTA}
+
+Enable MDM profile
+    Select Checkbox    ${MDM_profile}
+
+Disable MDM profile
+    Unselect Checkbox    ${MDM_profile}
+
+Enable Lock GFE
+    Select Checkbox    ${Lock_GFE}
+
+Disable Lock GFE
+    Unselect Checkbox    ${Lock_GFE}
+
+Enable Wipe GFE
+    Select Checkbox    ${Wipe_GFE}
+
+Disable Wipe GFE
+    Unselect Checkbox    ${Wipe_GFE}
+
+Enable Reset GFE
+    Select Checkbox    ${Reset_GFE}
+
+Disable Reset GFE
+    Unselect Checkbox    ${Reset_GFE}
+
+Enable Set policy
+    Select Checkbox    ${Set_policy}
+
+Disable Set policy
+    Unselect Checkbox    ${Set_policy}
+
+Enable Send notification
+    Select Checkbox    ${Send_notification}
+
+Disable Send notification
+    Unselect Checkbox    ${Send_notification}
+
+Enable Move HH GMMS
+    Select Checkbox    ${Move_HH_GMMS}
+
+Disable Move HH GMMS
+    Unselect Checkbox    ${Move_HH_GMMS}
+
+Enable Move HH GMC
+    Select Checkbox    ${Move_HH_GMC}
+
+Disable Move HH GMC
+    Unselect Checkbox    ${Move_HH_GMC}
+
+Enable Manage device settings
+    Select Checkbox    ${Manage_device_settings}
+
+Disable Manage device settings
+    Unselect Checkbox    ${Manage_device_settings}
+
+Enable Send server logs
+    Select Checkbox    ${Send_server_logs}
+
+Disable Send server logs
+    Unselect Checkbox    ${Send_server_logs}
+
+Enable Send GFE logs
+    Select Checkbox    ${Send_GFE_logs}
+
+Disable Send GFE logs
+    Unselect Checkbox    ${Send_GFE_logs}
+
+Enable Control logging
+    Select Checkbox    ${Control_logging}
+
+Disable Control logging
+    Unselect Checkbox    ${Control_logging}
+
+Enable View policy sets
+    Select Checkbox    ${View_policy_sets}
+
+Disable View policy sets
+    Unselect Checkbox    ${View_policy_sets}
+
+Enable Manage policy
+    Select Checkbox    ${Manage_policy}
+
+Disable Manage policy
+    Unselect Checkbox    ${Manage_policy}
+
+Enable Manage HH auth
+    Select Checkbox    ${Manage_HH_auth}
+
+Disable Manage HH auth
+    Unselect Checkbox    ${Manage_HH_auth}
+
+Enable View settings
+    Select Checkbox    ${View_settings}
+
+Disable View settings
+    Unselect Checkbox    ${View_settings}
+
+Enable Manage email temp
+    Select Checkbox    ${Manage_email_temp}
+
+Disable Manage email temp
+    Unselect Checkbox    ${Manage_email_temp}
+
+Enable Manage cert
+    Select checkbox    ${Manage_cert}
+
+Disable Manage cert
+    Unselect checkbox    ${Manage_cert}
+
+Enable Manage GMC relationship
+    Select Checkbox    ${Manage_GMC_relationship}
+
+Disable Manage GMC relationship
+    Unselect checkbox    ${Manage_GMC_relationship}
+
+Enable Manage software
+
+Disable Manage software
+
+Enable Cisco
+    Select Checkbox    ${Cisco_ISE}
+
+Disable Cisco
+    Unselect checkbox    ${Cisco_ISE}
+
+Enable View servers
+    Select Checkbox    ${View_Servers}
+
+Disable View servers
+    Unselect Checkbox    ${View_Servers}
+
+Enable Manage servers
+    Select Checkbox    ${Manage_servers}
+
+Disable Manage servers
+    Unselect Checkbox    ${Manage_servers}
+
+Enable View enterprise servers
+    Select Checkbox    ${View_enterprise_servers}
+
+Disable View enterprise servers
+    Unselect Checkbox    ${View_enterprise_servers}
+
+Enable Manage enterprise servers
+    Select Checkbox    ${Manage_enterprise_servers}
+
+Disable Manage enterprise servers
+    Unselect Checkbox    ${Manage_enterprise_servers}
+
+Enable Manage roles
+    Select Checkbox    ${Manage_roles}
+
+Disable Manage roles
+    Unselect Checkbox    ${Manage_roles}
+
+Check View-only selected
+    Radio Button Should Be Set To    type    viewOnly
+
+Check All Rights selected
+    Radio Button Should Be Set To    type    all
+
+Check Custom selected
+    Radio Button Should Be Set To    type    custom

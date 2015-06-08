@@ -5,12 +5,12 @@ import paramiko
 import time
 import base64
 import traceback
-import gemslog
+import gmclog
 
 from bs4 import BeautifulSoup
 
 __configfile = r"configuration\configuration.ini"
-__autoitfile = r"setup\configure.ini"
+__autoitfile = r"setup\GMCAutoIt_default.properties"
 
 def checkwebsitevalid(timeout):
     url = __getConfigurationValue("Setup", "dashboard")
@@ -109,7 +109,7 @@ def runBuild(type):
     finally:
         return rt, __stringToBase64(error)
 
-def execute_karaf_command(cmd):
+def execute_webservice_command(cmd):
     client = paramiko.SSHClient()
     rt = "True"
     result = ""
@@ -132,7 +132,7 @@ def get_install_log():
     rt = 'True'
     data = ''
     try:
-        f = open(r'C:\Users\svcgmmadmin\AppData\Local\GoodServerInstallerLog.txt')
+        f = open(r'C:\Users\svcbang\AppData\Local\Temp\GMCInstall.log')
         for line in f.readlines():
             data = data + line
         f.close()
@@ -142,11 +142,11 @@ def get_install_log():
     finally:
         return rt, __stringToBase64(data)
 
-def dump_gems_install_log():
+def dump_gmc_install_log():
     rt = 'True'
-    data = 'copy gems install log success'
-    src = r'C:\Users\svcgmmadmin\AppData\Local\GoodServerInstallerLog.txt'
-    dst = r'C:\SpecialBuild\GoodServerInstallerLog.txt'
+    data = 'copy gmc install log success'
+    src = r'C:\Users\svcbang\AppData\Local\Temp\GMCInstall.log'
+    dst = r'C:\SpecialBuild\GMCInstall.log'
     try:
         if os.path.exists(dst):
             os.remove(dst)
@@ -173,15 +173,15 @@ def get_computer_name():
     finally:
         return rt, __stringToBase64(name)
 
-def console_remove_gems():
-    if __check_gems_exists():
-        s = os.system("msiexec /x " + __get_gems_uninstall_package() + " /passive /forcerestart")
-        return 'True', __stringToBase64("remove gems success")
+def console_remove_gmc():
+    if __check_gmc_exists():
+        s = os.system("msiexec /x " + __get_gmc_uninstall_package() + " /passive /forcerestart")
+        return 'True', __stringToBase64("remove gmc success")
     else:
-        return 'True', __stringToBase64("none gems build can be found")
+        return 'True', __stringToBase64("none gmc build can be found")
 
-def zip_gems_log():
-    return gemslog.gemslog().getlog()
+def zip_gmc_log():
+    return gmclog.gmclog().getlog()
 
 def __getBasePath():
     path = os.path.abspath(os.path.dirname(__file__))
@@ -233,13 +233,13 @@ def __base64ToString(b64):
     #return b64
     return base64.b64decode(b64)
 
-def __get_gems_uninstall_package():
+def __get_gmc_uninstall_package():
     p = os.popen("wmic product where \"name='Good Enterprise Mobility Server'\" get LocalPackage /value")
     result = p.read()
     result = result.replace("\n", "").replace("\r", "")
     return str(result.split("=")[1])
 
-def __check_gems_exists():
+def __check_gmc_exists():
     p = os.popen("wmic product where \"name='Good Enterprise Mobility Server'\" get LocalPackage /value")
     result = p.read()
     result = result.replace("\n", "").replace("\r", "")
@@ -249,7 +249,7 @@ def __check_gems_exists():
         return False
 
 def test():
-    return execute_karaf_command('config:update;config:edit com.good.gcs.http.client.AsyncHttpClientFactoryImpl;property-set DisableSSLCertificateChecking true;config:update;')
+    return execute_webservice_command('config:update;config:edit com.good.gcs.http.client.AsyncHttpClientFactoryImpl;property-set DisableSSLCertificateChecking true;config:update;')
 
 #print download_windows_build()
-#print console_remove_gems()
+#print console_remove_gmc()

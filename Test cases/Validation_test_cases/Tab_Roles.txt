@@ -1,0 +1,17 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../Config/login_page.txt
+Resource          ../Config/roles_page.txt
+Resource          ../Config/roles_rights_page.txt
+
+*** Test Cases ***
+select view-only
+    Login GMC
+    Open Roles tab
+    Go to Help Desk
+    Change rights
+    sleep    2
+    Select Custom
+    Enable Add HH
+    Disable Add HH
+    Check View-only selected

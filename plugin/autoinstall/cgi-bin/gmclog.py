@@ -1,10 +1,8 @@
-__author__ = 'gavinliu'
-
 import os
 
-class gemslog:
+class gmclog:
     def __init__(self):
-        self.__karafparentpath=r"C:\Program Files\Good Technology\Good Enterprise Mobility Server\Good Server Distribution"
+        self.__karafparentpath=r"C:\Program Files (x86)\Good Technology\Good Mobile Control"
 
     def getlog(self):
         result = "True"
@@ -12,10 +10,10 @@ class gemslog:
         try:
             logpath = self.__locatelogs()
             zippath = os.path.abspath(os.path.dirname(__file__))
-            rt = os.system(zippath + r"\7za.exe a -tzip C:\SpecialBuild\gemslog.zip " + "\"" + logpath + "\"")
+            rt = os.system(zippath + r"\7za.exe a -tzip C:\SpecialBuild\gmclog.zip " + "\"" + logpath + "\"")
             if rt != 0:
                 result = "False"
-                error = "gems logs can not be zip"
+                error = "gmc logs can not be zip"
             else:
                 result = "True"
         except Exception, strerror:
@@ -29,8 +27,7 @@ class gemslog:
         for line in list:
             filepath = os.path.join(self.__karafparentpath, line)
             if os.path.isdir(filepath):
-                currentpath = filepath + "\\data\\log"
+                currentpath = filepath + "\\log"
                 break
         print "currentpath= " + currentpath
         return currentpath
-

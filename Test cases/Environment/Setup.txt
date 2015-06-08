@@ -1,5 +1,6 @@
 *** Settings ***
 Resource          ../Config/general_resource.txt
+Library           ../src/entrypoint.py
 
 *** Test Cases ***
 Install
