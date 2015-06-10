@@ -6,3 +6,4 @@ ${Password}       svc
 ${Domain}         asia
 ${Policy_name}    lchang-test
 ${Policy_description}    lchang-description
+${add_role_member}    lc02buzen@asia.qagood.com

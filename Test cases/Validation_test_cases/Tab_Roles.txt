@@ -3,15 +3,17 @@ Library           Selenium2Library
 Resource          ../Config/login_page.txt
 Resource          ../Config/roles_page.txt
 Resource          ../Config/roles_rights_page.txt
+Resource          ../Config/roles_addmember_page.txt
 
 *** Test Cases ***
 select view-only
     Login GMC
     Open Roles tab
-    Go to Help Desk
-    Change rights
+    Go to Service Administrator
+    Add member
     sleep    2
-    Select Custom
-    Enable Add HH
-    Disable Add HH
-    Check View-only selected
+    Select Domain
+    Look For
+    Look Now
+    Select from Search Result
+    Add member

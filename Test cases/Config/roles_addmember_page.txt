@@ -1,0 +1,33 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          general_resource.txt
+
+*** Variables ***
+${Domain_dropdownlist}    choose_domain
+${Look_For_text}    addmembers_search_text
+${Look_Now_button}    addmembers_search
+${Search_Result_list}    entity_search_results
+${Add_button}     addmembers_add
+${Cancel_button}    actionbar_button
+${Collection_Result_list}    collection
+
+*** Keywords ***
+Select Domain
+    Select From List By Value    ${Domain_dropdownlist}    ${Domain}
+
+Look For
+    Input Text    ${Look_For_text}    ${add_role_member}
+
+Select from Search Result
+    Select From List By Value    ${Search_Result_list}     ${add_role_member}
+
+Unselect from Collection Result
+
+Add member
+    Click Button    ${Add_button}
+
+Cancel
+    Click Button    ${Cancel_button}
+
+Look Now
+    Click Button    ${Look_Now_button}
