@@ -1,19 +1,139 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          ../Config/login_page.txt
-Resource          ../Config/roles_page.txt
-Resource          ../Config/roles_rights_page.txt
-Resource          ../Config/roles_addmember_page.txt
+Resource          ../../Pages/Roles/roles_page.txt
+Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
+Resource          ../../Flows/Login/login-logoff.txt
 
 *** Test Cases ***
-select view-only
-    Login GMC
+16311 User with manage custom handheld policies, software right
+    Login
     Open Roles tab
     Go to Service Administrator
-    Add member
+    Add members
     sleep    2
     Select Domain
     Look For
     Look Now
-    Select from Search Result
+    Add All
     Add member
+    Sign Out
+    Role member login
+
+16312 User with erase handheld data right
+
+16313 User has the right to view OTA setup PINs.
+
+16314 User with manage servers right
+
+16316 User with manage Roles right
+
+16317 User with manage OTA Email templates right
+
+16318 User with Add and remove custom software right
+
+16319 Verify Tab functionality on Roles tab
+
+16320 Verify Tab functionality on Add Role Members tab
+
+16321 View only rights - Cancel button
+
+16322 All rights - Cancel button
+
+16323 Custom radio button - Cancel button
+
+16324 Delete Handheld option - Cancel button
+
+16325 Add Handheld option - Cancel button
+
+16326 Add more than one Handheld option - Cancel button
+
+16327 Manage custom policies and software option - Cancel button
+
+16328 Erase handheld data - Cancel button
+
+16329 View OTA setup PINs option - Cancel button
+
+16330 Manage Servers option - Cancel button
+
+16332 Manage Roles option - Cancel button
+
+16333 Manage OTA Email templates option - Cancel button
+
+16334 Add/remove custom software - Cancel button
+
+16335 Add a role to the GMC console - double byte
+
+16336 Missing right - Add Handheld
+
+16337 Missing right - Add Additional handheld
+
+16338 Missing right - Delete handheld
+
+16339 Missing right - View OTA Setup PIN
+
+16340 Missing right - Erase handheld data and lock handheld
+
+16342 Missing right - Manage Roles
+
+16343 Missing right - Manage Custom Software
+
+16344 Missing right - Manage OTA Email templates
+
+16345 Add Handheld right - operations
+
+16346 Add Additional handhelds right - operations
+
+16347 Delete handheld right - operations
+
+16348 Manage handheld policy and software right - operations
+
+16349 View OTA Setup PIN - Operations
+
+16350 Erase handheld data and lock handheld right - Operations
+
+16352 Manage Servers - Operations
+
+16353 Users in a group added to a Role
+
+12744 Add a role to the EMF console
+    Login GMC
+    Open Roles tab
+    Add Role
+
+12745 Delete: role from console
+
+12746 Verify user information and his rights
+
+12747 Self Service User Modifies the URL to be in an Admin role
+
+1675_1 Search for handhelds - "Look For:" field validation
+
+1676 Add User(s) or Group(s): to an existing role
+    Login
+    Open Roles tab
+    Go to Service Administrator
+    Add members
+    sleep    2
+    Select Domain
+    Look For
+    Look Now
+    Add All
+    Add member
+    Sign Out
+    Role member login
+    Sign Out
+
+1677 Delete user(s) or group(s) from a role
+    Login GMC
+    Open Roles tab
+    Go to Service Administrator
+
+1678 Edit role: Change Name Role and Description
+
+1679 Modify rights: for an exisiting user
+
+1680 Verify functionality of Service Adminstrator role
+
+1681 Verify functionality of Adminstrator role
+
+1682 Verify functionality of Helpdesk role

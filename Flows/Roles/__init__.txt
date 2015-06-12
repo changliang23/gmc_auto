@@ -1,0 +1,6 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Config/Resource/general_resource.txt
+Resource          ../../Pages/Roles/roles_page.txt
+Resource          ../../Pages/Roles/editRights/editRights_page.txt
+Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt

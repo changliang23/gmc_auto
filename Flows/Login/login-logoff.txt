@@ -1,0 +1,23 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Config/Resource/general_resource.txt
+Resource          ../../Pages/Login/login_page.txt
+
+*** Keywords ***
+Login
+    Open Login page
+    Input Username
+    Input Password
+    Input Domain
+    Click Sign In button
+
+Sign Out
+    Click Link    xpath=${Sign_Out_button}
+    Close Browser
+
+Role member login
+    Open Login page
+    Input role member user
+    Input Password
+    Input Domain
+    Click Sign In button

@@ -6,20 +6,22 @@ Resource          general_resource.txt
 ${Domain_dropdownlist}    choose_domain
 ${Look_For_text}    addmembers_search_text
 ${Look_Now_button}    addmembers_search
-${Search_Result_list}    entity_search_results
+${Search_Result_list}    list_scroller
 ${Add_button}     addmembers_add
 ${Cancel_button}    actionbar_button
 ${Collection_Result_list}    collection
+${Add_All_button}    /html/body/form/div/table[1]/tbody/tr[2]/td/div/table[1]/tbody/tr/td[6]/div/a
+${Remove_All_button}    remove_all_rows
 
 *** Keywords ***
 Select Domain
-    Select From List By Value    ${Domain_dropdownlist}    ${Domain}
+    Select From List By Value    ${Domain_dropdownlist}    ${select_domain}
 
 Look For
-    Input Text    ${Look_For_text}    ${add_role_member}
+    Input Text    ${Look_For_text}    ${search_user}
 
 Select from Search Result
-    Select From List By Value    ${Search_Result_list}     ${add_role_member}
+    Select From List By Value    ${Search_Result_list}     ${search_user}
 
 Unselect from Collection Result
 
@@ -31,3 +33,9 @@ Cancel
 
 Look Now
     Click Button    ${Look_Now_button}
+
+Add All
+    Click Link    xpath=${Add_All_button}
+
+Remove All
+    Click Button    ${Remove_All_button}

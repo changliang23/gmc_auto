@@ -1,0 +1,5 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Config/Resource/general_resource.txt
+Resource          ../../Pages/Policies/policies_page.txt
+Resource          ../../Pages/Policies/policyDetails/policyDetails_page.txt

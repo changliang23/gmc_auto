@@ -1,0 +1,4 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Config/Resource/general_resource.txt
+Resource          ../../Pages/Home/home_page.txt

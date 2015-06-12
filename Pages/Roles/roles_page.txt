@@ -1,6 +1,7 @@
 *** Settings ***
 Library           Selenium2Library
 Resource          general_resource.txt
+Library           ../src/double_buttons.py
 
 *** Variables ***
 ${roles_tab}      roles_tab
@@ -13,8 +14,10 @@ ${Change_name_button}    roles_change_link
 ${Add_role_button}    addrole_button
 ${Delete_role_button}    deleterole_button
 ${Export_button}    role_member_export
-${Add_member_button}    role_member_add1
-${Delete_member_button}    role_member_delete1
+${Add_member_button1}    role_member_add1
+${Delete_member_button1}    role_member_delete1
+${Add_member_button2}    role_member_add2
+${Delete_member_button2}    role_member_delete2
 
 *** Keywords ***
 Open Roles tab
@@ -47,8 +50,8 @@ Change rights
 Change name
     Click Element    ${Change_name_button}
 
-Add member
-    Click Element    ${Add_member_button}
+Add members
+    Click Element    ${Add_member_button1}
 
 Delete member
-    Click Element    ${Delete_member_button}
+    Click Element    ${Delete_member_button1}
