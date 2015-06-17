@@ -9,3 +9,5 @@ ${Policy_description}    lchang-description
 ${add_role_member}    lc02buzen@asia.qagood.com
 ${select_domain}    ASIA
 ${search_user}    lc02buzen
+${Custom_role_name}    Test custom role
+${Custom_role_description}    Test_role_description

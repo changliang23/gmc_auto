@@ -1,0 +1,22 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../../Config/Resource/general_resource.txt
+
+*** Variables ***
+${role_name}      role_name
+${role_description}    /html/body/form/div/div/table/tbody/tr[2]/td[2]/textarea
+${Add_CustomRole_button}    addrole_save
+${Cancel_CustomRole_button}    addrole_cancel
+
+*** Keywords ***
+Input Role name
+    Input Text    ${role_name}    ${Custom_role_name}
+
+Input Role description
+    Input Text    xpath=${role_description}    ${Custom_role_description}
+
+Click Add Role
+    Click Button    ${Add_CustomRole_button}
+
+Click Cancel
+    Click Element    ${Cancel_CustomRole_button}

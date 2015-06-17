@@ -1,7 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          general_resource.txt
-Library           ../src/double_buttons.py
+Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${roles_tab}      roles_tab
@@ -18,6 +17,7 @@ ${Add_member_button1}    role_member_add1
 ${Delete_member_button1}    role_member_delete1
 ${Add_member_button2}    role_member_add2
 ${Delete_member_button2}    role_member_delete2
+${Roles_list}     /html/body/form/div[1]/div/ul
 
 *** Keywords ***
 Open Roles tab
@@ -36,7 +36,7 @@ Go to Self Service
     Click link    ${Self_Service_link}
 
 Add role
-    Click Element    ${Add_button}
+    Click Element    ${Add_role_button}
 
 Delete role
     Click Element    ${Delete_button}

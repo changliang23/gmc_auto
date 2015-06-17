@@ -1,0 +1,24 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Pages/Roles/roles_page.txt
+Resource          ../../Pages/Roles/addRole/addrole_page.txt
+Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
+
+*** Keywords ***
+Add Custom Role
+    Add role
+    Input Role name
+    Input Role description
+    Click Add Role
+
+Select Custom Role
+    Select From List    xpath=${Roles_list}    ${Custom_role_name}
+
+Add Role Member
+    Add members
+    sleep    2
+    Select Domain
+    Look For
+    Look Now
+    Add All
+    Add member

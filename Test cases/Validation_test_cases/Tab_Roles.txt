@@ -3,21 +3,19 @@ Library           Selenium2Library
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
 Resource          ../../Flows/Login/login-logoff.txt
+Resource          ../../Flows/Roles/role_general.txt
+Resource          ../../Pages/Roles/editRights/editRights_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
     Login
     Open Roles tab
-    Go to Service Administrator
-    Add members
+    Add Custom Role
     sleep    2
-    Select Domain
-    Look For
-    Look Now
-    Add All
-    Add member
-    Sign Out
-    Role member login
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable Add HH
 
 16312 User with erase handheld data right
 
@@ -137,3 +135,14 @@ Resource          ../../Flows/Login/login-logoff.txt
 1681 Verify functionality of Adminstrator role
 
 1682 Verify functionality of Helpdesk role
+
+test
+    Login
+    Open Roles tab
+    Add Custom Role
+    sleep    2
+    Sign Out
+    Login
+    Open Roles tab
+    Select All From List    ${Roles_list}
+    Enable Add HH

@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          general_resource.txt
+Resource          ../../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${Domain_dropdownlist}    choose_domain
@@ -21,7 +21,7 @@ Look For
     Input Text    ${Look_For_text}    ${search_user}
 
 Select from Search Result
-    Select From List By Value    ${Search_Result_list}     ${search_user}
+    Select From List By Value    ${Search_Result_list}    ${search_user}
 
 Unselect from Collection Result
 

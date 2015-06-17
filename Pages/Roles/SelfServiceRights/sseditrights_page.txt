@@ -1,0 +1,91 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${Add_GFE}        addHandheldSelfService
+${Delete_HH}      deleteHandheldSelfService
+${Resend_OTA}     viewPINSelfService
+${Reset_GFE}      forceResyncSelfService
+${Unlock_GFE}     resetApplicationPasswordSelfService
+${Upload_SMIME_cert}    uploadSmimeSoftTokenSelfService
+${Upload_cert}    uploadClientCertSelfService
+${View_OTA}       viewPINSelfService2
+${Wipe_HH}        wipeHandheldSelfService
+${Add_MDM}        addMDMHandheldSelfService
+${Reset_PW}       resetDevicePasswordSelfService
+${Update_SS_Rights1}    role_rights_save1
+${Update_SS_Rights2}    role_rights_save2
+${Cancel_SS_Rights}    role_rights_cancel
+
+*** Keywords ***
+Enable Add GFE
+    Select Checkbox    ${Add_GFE}
+
+Disable Add GFE
+    Unselect Checkbox    ${Add_GFE}
+
+Enable Delete HH
+    Select Checkbox    ${Delete_HH}
+
+Disable Delete HH
+    Unselect Checkbox    ${Delete_HH}
+
+Enable Resend OTA
+    Select Checkbox    ${Resend_OTA}
+
+Disable Resend OTA
+    Unselect Checkbox    ${Resend_OTA}
+
+Enable Reset GFE
+    Select Checkbox    ${Reset_GFE}
+
+Disable Reset GFE
+    Unselect Checkbox    ${Reset_GFE}
+
+Enable Unlock GFE
+    Select Checkbox    ${Unlock_GFE}
+
+Disable Unlock GFE
+    Unselect Checkbox    ${Unlock_GFE}
+
+Enable Upload SMIME cert
+    Select Checkbox    ${Upload_SMIME_cert}
+
+Disable Upload SMIME cert
+    Unselect Checkbox    ${Upload_SMIME_cert}
+
+Enable Upload cert
+    Select Checkbox    ${Upload_cert}
+
+Disable Upload cert
+    Unselect Checkbox    ${Upload_cert}
+
+Enable View OTA
+    Select Checkbox    ${View_OTA}
+
+Disable View OTA
+    Unselect Checkbox    ${View_OTA}
+
+Enable Wipe HH
+    Select Checkbox    ${Wipe_HH}
+
+Disable Wipe HH
+    Unselect Checkbox    ${Wipe_HH}
+
+Enable Add MDM
+    Select Checkbox    ${Add_MDM}
+
+Disable Add MDM
+    Unselect Checkbox    ${Add_MDM}
+
+Enable Reset PW
+    Select Checkbox    ${Reset_PW}
+
+Disable Reset PW
+    Unselect Checkbox    ${Reset_PW}
+
+Update SS Rights
+    Click Element    ${Update_SS_Rights1}
+
+Cancel SS Rights
+    Click Element    ${Cancel_SS_Rights}

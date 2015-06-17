@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          general_resource.txt
+Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${handheld_tab}    handhelds_tab

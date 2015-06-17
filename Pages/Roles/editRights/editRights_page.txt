@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          general_resource.txt
+Resource          ../../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${Add_handheld}    addHandheld
@@ -232,3 +232,9 @@ Check All Rights selected
 
 Check Custom selected
     Radio Button Should Be Set To    type    custom
+
+Update Rights
+    Click Element    ${Update_button}
+
+Cancel Rights
+    Click Element    ${Cancel_button}
