@@ -1,0 +1,551 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Pages/Roles/editRights/editRights_page.txt
+Resource          ../../Pages/Roles/roles_page.txt
+
+*** Keywords ***
+Enable all rights
+    Enable Add HH
+    Enable Add additional HH
+    Enable Delete HH
+    Enable View OTA
+    Enable MDM profile
+    Select Lock GFE
+    Enable Wipe GFE
+    Enable Reset GFE
+    Enable Set policy
+    Enable Send notification
+    Enable Move HH GMMS
+    Enable Move HH GMC
+    Enable Manage device settings
+    Enable Send server logs
+    Enable Send GFE logs
+    Enable Control logging
+    Enable View policy sets
+    Enable Manage policy
+    Enable Manage HH auth
+    Enable View settings
+    Enable Manage email temp
+    Enable Manage cert
+    Enable Manage GMC relationship
+    Enable Manage software
+    Enable Cisco
+    Enable View servers
+    Enable Manage servers
+    Enable View enterprise servers
+    Enable Manage enterprise servers
+    Enable manage roles
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Add_handheld}
+    Checkbox Should Be Selected    ${Add_additional_handheld}
+    Checkbox Should Be Selected    ${Delete_handheld}
+    Checkbox Should Be Selected    ${View_OTA}
+    Checkbox Should Be Selected    ${MDM_profile}
+    Checkbox Should Be Selected    ${Lock_GFE}
+    Checkbox Should Be Selected    ${Wipe_GFE}
+    Checkbox Should Be Selected    ${Reset_GFE}
+    Checkbox Should Be Selected    ${Set_policy}
+    Checkbox Should Be Selected    ${Send_notification}
+    Checkbox Should Be Selected    ${Move_HH_GMMS}
+    Checkbox Should Be Selected    ${Move_HH_GMC}
+    Checkbox Should Be Selected    ${Manage_device_settings}
+    Checkbox Should Be Selected    ${Send_server_logs}
+    Checkbox Should Be Selected    ${Send_GFE_logs}
+    Checkbox Should Be Selected    ${Control_logging}
+    Checkbox Should Be Selected    ${View_policy_sets}
+    Checkbox Should Be Selected    ${Manage_policy}
+    Checkbox Should Be Selected    ${Manage_HH_auth}
+    Checkbox Should Be Selected    ${View_settings}
+    Checkbox Should Be Selected    ${Manage_email_temp}
+    Checkbox Should Be Selected    ${Manage_cert}
+    Checkbox Should Be Selected    ${Manage_GMC_relationship}
+    Checkbox Should Be Selected    ${Manage_software}
+    Checkbox Should Be Selected    ${Cisco_ISE}
+    Checkbox Should Be Selected    ${View_Servers}
+    Checkbox Should Be Selected    ${Manage_servers}
+    Checkbox Should Be Selected    ${View_enterprise_servers}
+    Checkbox Should Be Selected    ${Manage_enterprise_servers}
+    Checkbox Should Be Selected    ${Manage_roles}
+    Cancel Rights
+
+Select All HH
+    Enable Add HH
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Add_handheld}
+    Cancel Rights
+
+Unselect Add HH
+    Disable Add HH
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Add_handheld}
+    Cancel Rights
+
+Select Add additional HH
+    Enable Add additional HH
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Add_additional_handheld}
+    Cancel Rights
+
+Unselect Add additional HH
+    Disable Add additional HH
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Cancel Rights
+
+Select Delete HH
+    Enable Delete HH
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Delete_handheld}
+    Cancel Rights
+
+Unselect Delete HH
+    Disable Delete HH
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Delete_handheld}
+    Cancel Rights
+
+Select View OTA
+    Enable View OTA
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${View_OTA}
+    Cancel Rights
+
+Unselect View OTA
+    Disable View OTA
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${View_OTA}
+    Cancel Rights
+
+Select MDM profile
+    Enable MDM profile
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${MDM_profile}
+    Cancel Rights
+
+Unselect MDM profile
+    Disable MDM profile
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${MDM_profile}
+    Cancel Rights
+
+Select Lock GFE
+    Enable Lock GFE
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Lock_GFE}
+    Cancel Rights
+
+Unselect Lock GFE
+    Disable Lock GFE
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Lock_GFE}
+    Cancel Rights
+
+Select Wipe GFE
+    Enable Wipe GFE
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Wipe_GFE}
+    Cancel Rights
+
+Unselect Wipe GFE
+    Disable Wipe GFE
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Wipe_GFE}
+    Cancel Rights
+
+Select Reset GFE
+    Enable Reset GFE
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Reset_GFE}
+    Cancel Rights
+
+Unselect Reset GFE
+    Disable Reset GFE
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Reset_GFE}
+    Cancel Rights
+
+Select Set policy
+    Enable Set policy
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Set_policy}
+    Cancel Rights
+
+Unselect Set policy
+    Disable Set policy
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Set_policy}
+    Cancel Rights
+
+Select Send notification
+    Enable Send notification
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Send_notification}
+    Cancel Rights
+
+Unselect Send notification
+    Disable Send notification
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Send_notification}
+    Cancel Rights
+
+Select Move HH GMMS
+    Enable Move HH GMMS
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Move_HH_GMMS}
+    Cancel Rights
+
+Unselect Move HH GMMS
+    Disable Move HH GMMS
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Move_HH_GMMS}
+    Cancel Rights
+
+Selec Move HH GMC
+    Enable Move HH GMC
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Move_HH_GMC}
+    Cancel Rights
+
+Unselect Move HH GMC
+    Disable Move HH GMC
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Move_HH_GMC}
+    Cancel Rights
+
+Select Manage device settings
+    Enable Manage device settings
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_device_settings}
+    Cancel Rights
+
+Unselect Manage device settings
+    Disable Manage device settings
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_device_settings}
+    Cancel Rights
+
+Select Send server logs
+    Enable Send server logs
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Send_server_logs}
+    Cancel Rights
+
+Unselect Send server logs
+    Disable Send server logs
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Send_server_logs}
+    Cancel Rights
+
+Select Send GFE logs
+    Enable Send GFE logs
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Send_GFE_logs}
+    Cancel Rights
+
+Unselect Send GFE logs
+    Disable Send GFE logs
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Send_GFE_logs}
+    Cancel Rights
+
+Select Control logging
+    Enable Control logging
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Control_logging}
+    Cancel Rights
+
+Unselect Control logging
+    Disable Control logging
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Control_logging}
+    Cancel Rights
+
+Select View policy sets
+    Enable View policy sets
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${View_policy_sets}
+    Cancel Rights
+
+Unselect View policy sets
+    Disable View policy sets
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${View_policy_sets}
+    Cancel Rights
+
+Select Manage policy
+    Enable Manage policy
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_policy}
+    Cancel Rights
+
+Unselect Manage policy
+    Disable Manage policy
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_policy}
+    Cancel Rights
+
+Select Manage HH auth
+    Enable Manage HH auth
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_HH_auth}
+    Cancel Rights
+
+Unselect Manage HH auth
+    Disable Manage HH auth
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_HH_auth}
+    Cancel Rights
+
+Select View settings
+    Enable View settings
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${View_settings}
+    Cancel Rights
+
+Unselect View settings
+    Disable View settings
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${View_settings}
+    Cancel Rights
+
+Select Manage email temp
+    Enable Manage email temp
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_email_temp}
+    Cancel Rights
+
+Unselect Manage email temp
+    Disable Manage email temp
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_email_temp}
+    Cancel Rights
+
+Select Manage cert
+    Enable Manage cert
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_cert}
+    Cancel Rights
+
+Unselect Manage cert
+    Disable Manage cert
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_cert}
+    Cancel Rights
+
+Select Manage GMC relationship
+    Enable Manage GMC relationship
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_GMC_relationship}
+    Cancel Rights
+
+Unselect Manage GMC relationship
+    Disable Manage GMC relationship
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_GMC_relationship}
+    Cancel Rights
+
+Select Manage software
+    Enable Manage software
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_software}
+    Cancel Rights
+
+Unselect Manage software
+    Disable Manage software
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_software}
+    Cancel Rights
+
+Select Cisco
+    Enable Cisco
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Cisco_ISE}
+    Cancel Rights
+
+Unselect Cisco
+    Disable Cisco
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Cisco_ISE}
+    Cancel Rights
+
+Select View servers
+    Enable View servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${View_Servers}
+    Cancel Rights
+
+Unselect View servers
+    Disable View servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${View_Servers}
+    Cancel Rights
+
+Select Manage servers
+    Enable Manage servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_servers}
+    Cancel Rights
+
+Unselect Manage servers
+    Disable Manage servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_servers}
+    Cancel Rights
+
+Select View enterprise servers
+    Enable View enterprise servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${View_enterprise_servers}
+    Cancel Rights
+
+Unselect View enterprise servers
+    Disable View enterprise servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${View_enterprise_servers}
+    Cancel Rights
+
+Select Manage enterprise servers
+    Enable View enterprise servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_enterprise_servers}
+    Cancel Rights
+
+Unselect Manage enterprise servers
+    Disable View enterprise servers
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_enterprise_servers}
+    Cancel Rights
+
+Select Manage roles
+    Enable Manage roles
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Be Selected    ${Manage_roles}
+    Cancel Rights
+
+Unselect Manage roles
+    Disable Manage roles
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    custom
+    Checkbox Should Not Be Selected    ${Manage_roles}
+    Cancel Rights

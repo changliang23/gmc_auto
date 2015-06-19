@@ -11,3 +11,10 @@ ${select_domain}    ASIA
 ${search_user}    lc02buzen
 ${Custom_role_name}    Test custom role
 ${Custom_role_description}    Test_role_description
+${search_user_id}    89b986cbc298044c8d96280ded2f95e4
+${roles_tab}      /html/body/div[1]/div[5]/a[5]
+${home_tab}       /html/body/div[1]/div[5]/a[1]
+${handhelds_tab}    /html/body/div[1]/div[5]/a[2]
+${policies_tab}    /html/body/div[1]/div[5]/a[3]
+${servers_tab}    /html/body/div[1]/div[5]/a[4]
+${settings_tab}    /html/body/div[1]/div[5]/a[6]

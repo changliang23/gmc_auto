@@ -1,0 +1,8 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Pages/Handhelds/handhelds_page.txt
+
+*** Keywords ***
+Go to Handhelds tab
+    Open Handhelds tab
+    Location should be    ${GMC_URL}/handhelds.do

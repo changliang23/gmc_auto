@@ -6,10 +6,12 @@ Resource          ../../Pages/Login/login_page.txt
 *** Keywords ***
 Login
     Open Login page
+    Location should be    ${GMC_URL}/login.do
     Input Username
     Input Password
     Input Domain
     Click Sign In button
+    Location should be    ${GMC_URL}/home.do
 
 Sign Out
     Click Link    xpath=${Sign_Out_button}

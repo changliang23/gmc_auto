@@ -18,6 +18,7 @@ ${Delete_member_button1}    role_member_delete1
 ${Add_member_button2}    role_member_add2
 ${Delete_member_button2}    role_member_delete2
 ${Roles_list}     /html/body/form/div[1]/div/ul
+${Enable_allMember_checkbox}    /html/body/form/div[2]/div[3]/table[2]/tbody/tr[1]/td[1]/input
 
 *** Keywords ***
 Open Roles tab
@@ -39,7 +40,7 @@ Add role
     Click Element    ${Add_role_button}
 
 Delete role
-    Click Element    ${Delete_button}
+    Click Element    ${Delete_role_button}
 
 Export Rights
     Click Element    ${Export_button}
@@ -55,3 +56,6 @@ Add members
 
 Delete member
     Click Element    ${Delete_member_button1}
+
+Enable All Memebers
+    Select Checkbox    xpath=${Enable_allMember_checkbox}

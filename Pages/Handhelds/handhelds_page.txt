@@ -4,6 +4,8 @@ Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${handheld_tab}    handhelds_tab
+${Add_Handhelds1}    handhelds_add1
+${Add_Handhelds2}    handhelds_add2
 
 *** Keywords ***
 Open Handhelds tab

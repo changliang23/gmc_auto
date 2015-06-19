@@ -1,0 +1,8 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Pages/Policies/policies_page.txt
+
+*** Keywords ***
+Go to Policies tab
+    Open Policies tab
+    Location should be    ${GMC_URL}/policies.do

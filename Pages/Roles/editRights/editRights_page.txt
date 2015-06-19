@@ -34,7 +34,7 @@ ${View_enterprise_servers}    gcsView
 ${Manage_enterprise_servers}    gcsManage
 ${Manage_roles}    manageRoles
 ${Update_button}    role_rights_save2
-${Cancel_button}    role_rights_cancel
+${Cancel_right_button}    role_rights_cancel
 
 *** Keywords ***
 Select View-only
@@ -185,8 +185,10 @@ Disable Manage GMC relationship
     Unselect checkbox    ${Manage_GMC_relationship}
 
 Enable Manage software
+    Select Checkbox    ${Manage_software}
 
 Disable Manage software
+    Unselect Checkbox    ${Manage_software}
 
 Enable Cisco
     Select Checkbox    ${Cisco_ISE}
@@ -237,4 +239,4 @@ Update Rights
     Click Element    ${Update_button}
 
 Cancel Rights
-    Click Element    ${Cancel_button}
+    Click Element    ${Cancel_right_button}

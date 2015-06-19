@@ -5,17 +5,34 @@ Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
 Resource          ../../Flows/Login/login-logoff.txt
 Resource          ../../Flows/Roles/role_general.txt
 Resource          ../../Pages/Roles/editRights/editRights_page.txt
+Resource          ../../Flows/Roles/edit_rights.txt
+Resource          ../../Flows/Handhelds/hh_general.txt
+Resource          ../../Flows/Policies/policy_general.txt
+Resource          ../../Pages/Policies/policies_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
     Login
-    Open Roles tab
+    Go to Roles tab
     Add Custom Role
     sleep    2
+    Select Custom Role
     Add Role Member
     Change rights
     Select Custom
-    Enable Add HH
+    Select Manage policy
+    Sign Out
+    Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Go to Policies tab
+    Element should be enabled    ${Create_button}
+    Sign Out
+    Login
+    Go to Roles tab
+    Delete Custom Role
+    Sign Out
 
 16312 User with erase handheld data right
 
@@ -138,11 +155,4 @@ Resource          ../../Pages/Roles/editRights/editRights_page.txt
 
 test
     Login
-    Open Roles tab
-    Add Custom Role
-    sleep    2
-    Sign Out
-    Login
-    Open Roles tab
-    Select All From List    ${Roles_list}
-    Enable Add HH
+    Page should not contain element    xpath=${roles_tab}

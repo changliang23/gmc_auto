@@ -3,6 +3,7 @@ Library           Selenium2Library
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/addRole/addrole_page.txt
 Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
+Resource          ../../Pages/Roles/editRights/editRights_page.txt
 
 *** Keywords ***
 Add Custom Role
@@ -10,9 +11,11 @@ Add Custom Role
     Input Role name
     Input Role description
     Click Add Role
+    Page should contain    ${Custom_role_name}
 
 Select Custom Role
-    Select From List    xpath=${Roles_list}    ${Custom_role_name}
+    Click Link    ${Custom_role_name}
+    Page should contain    ${Custom_role_description}
 
 Add Role Member
     Add members
@@ -20,5 +23,25 @@ Add Role Member
     Select Domain
     Look For
     Look Now
+    Page should contain    ${search_user}
     Add All
     Add member
+    Page should contain    ${search_user}
+
+Delete Role Member
+    Enable All Memebers
+    Delete member
+    confirm action
+    Choose Ok On Next Confirmation
+    page should not contain    ${search_user}
+
+Delete Custom Role
+    Select Custom Role
+    Delete role
+    confirm action
+    Choose Ok On Next Confirmation
+    page should not contain    ${Custom_role_name}
+
+Go to Roles tab
+    Open Roles tab
+    Location should be    ${GMC_URL}/roles.do
