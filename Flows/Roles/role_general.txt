@@ -4,27 +4,38 @@ Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/addRole/addrole_page.txt
 Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
 Resource          ../../Pages/Roles/editRights/editRights_page.txt
+Resource          ../Login/login-logoff.txt
+Resource          ../../Config/Resource/general_resource.txt
 
 *** Keywords ***
 Add Custom Role
+    Page should contain element    ${Add_role_button}
     Add role
+    Page should contain element    ${role_name}
     Input Role name
     Input Role description
+    Element should be enabled    ${Add_CustomRole_button}
     Click Add Role
     Page should contain    ${Custom_role_name}
 
 Select Custom Role
+    Page should contain    ${Custom_role_name}
     Click Link    ${Custom_role_name}
     Page should contain    ${Custom_role_description}
 
 Add Role Member
+    Element should be enabled    ${Add_member_button1}
     Add members
     sleep    2
+    Page should contain    Domain
+    Page should contain    Look For
     Select Domain
     Look For
+    Element should be enabled    ${Look_Now_button}
     Look Now
     Page should contain    ${search_user}
     Add All
+    Element should be enabled    ${Add_button}
     Add member
     Page should contain    ${search_user}
 
@@ -43,5 +54,16 @@ Delete Custom Role
     page should not contain    ${Custom_role_name}
 
 Go to Roles tab
+    Page should contain    Roles
     Open Roles tab
     Location should be    ${GMC_URL}/roles.do
+
+Clean up roles
+    Login
+    Go to Roles tab
+    Delete Custom Role
+    Sign Out
+
+Login->Roles
+    Login
+    Go to Roles tab

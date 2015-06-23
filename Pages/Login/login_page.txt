@@ -8,7 +8,7 @@ ${Password_id}    iLogin_pwd
 ${Domain_id}      domain_ID
 ${remember_checkbox_id}    login_remember_me
 ${Sign_in_button}    login_submit
-${Sign_Out_button}    /html/body/div[1]/div[4]/a[2]
+${Sign_Out_button}    Sign Out
 
 *** Keywords ***
 Open Login page

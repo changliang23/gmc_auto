@@ -1,4 +1,6 @@
 *** Settings ***
+Suite Setup       Open Login page
+Suite Teardown    Close Browser
 Library           Selenium2Library
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
@@ -12,10 +14,10 @@ Resource          ../../Pages/Policies/policies_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
-    Login
-    Go to Roles tab
+    [Tags]    Roles
+    [Setup]    Login->Roles
     Add Custom Role
-    sleep    2
+    set selenium timeout    2
     Select Custom Role
     Add Role Member
     Change rights
@@ -29,18 +31,28 @@ Resource          ../../Pages/Policies/policies_page.txt
     Go to Policies tab
     Element should be enabled    ${Create_button}
     Sign Out
-    Login
-    Go to Roles tab
-    Delete Custom Role
-    Sign Out
+    set selenium timeout    1
+    [Teardown]    Clean up roles
 
 16312 User with erase handheld data right
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    [Teardown]    Clean up roles
 
 16313 User has the right to view OTA setup PINs.
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    [Teardown]    Clean up roles
 
 16314 User with manage servers right
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    [Teardown]    Clean up roles
 
 16316 User with manage Roles right
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    [Teardown]    Clean up roles
 
 16317 User with manage OTA Email templates right
 
@@ -154,5 +166,4 @@ Resource          ../../Pages/Policies/policies_page.txt
 1682 Verify functionality of Helpdesk role
 
 test
-    Login
-    Page should not contain element    xpath=${roles_tab}
+    Login->Roles

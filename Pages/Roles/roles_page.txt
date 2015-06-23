@@ -46,6 +46,7 @@ Export Rights
     Click Element    ${Export_button}
 
 Change rights
+    Page should contain    ${Change_right_button}
     Click Element    ${Change_right_button}
 
 Change name

@@ -4,5 +4,6 @@ Resource          ../../Pages/Policies/policies_page.txt
 
 *** Keywords ***
 Go to Policies tab
+    Page should contain    Policies
     Open Policies tab
     Location should be    ${GMC_URL}/policies.do
