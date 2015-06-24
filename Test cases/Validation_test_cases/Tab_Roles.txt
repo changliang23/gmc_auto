@@ -12,6 +12,7 @@ Resource          ../../Flows/Handhelds/hh_general.txt
 Resource          ../../Flows/Policies/policy_general.txt
 Resource          ../../Pages/Policies/policies_page.txt
 Resource          ../../Flows/Servers/servers_general.txt
+Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -45,12 +46,22 @@ Resource          ../../Flows/Servers/servers_general.txt
     Change rights
     Select Custom
     Select Wipe GFE
+    Go to Handhelds tab
+    Add a HH
     Sign Out
     Role member login
     Page should not contain element    xpath=${roles_tab}
     Go to Handhelds tab
+    Select the HH
+    Go to Security
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
     Sign Out
     set selenium timeout    1
+    Login
+    Go to Handhelds tab
+    Delete the HH
+    Sign Out
     [Teardown]    Clean up roles
 
 16313 User has the right to view OTA setup PINs.
@@ -69,10 +80,17 @@ Resource          ../../Flows/Servers/servers_general.txt
     Role member login
     Page should not contain element    xpath=${roles_tab}
     Go to Handhelds tab
+    Select the HH
+    Go to OTA
+    Page should not contain    <unauthorized to view>
     Go to Handhelds tab
     Element should be disabled    ${Add_Handhelds1}
     Sign Out
     set selenium timeout    1
+    Login
+    Go to Handhelds tab
+    Delete the HH
+    Sign Out
     [Teardown]    Clean up roles
 
 16314 User with manage servers right
@@ -233,4 +251,5 @@ test
     Login
     Go to Handhelds tab
     Add a HH
+    Select the HH
     Delete the HH

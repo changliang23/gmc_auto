@@ -31,6 +31,13 @@ Delete the HH
     Page should contain    ${search_user}
     Enable all HH
     Select From List By Value    ${Apply_Action_dropdownlist1}    ${Delete_HH}
+    sleep    1
     Confirm Yes
+    sleep    1
     Go to Handhelds tab
     Page should not contain    ${search_user}
+
+Select the HH
+    Page should contain    ${search_user}
+    Click Link    ${search_user}
+    Page should contain    Handheld Info
