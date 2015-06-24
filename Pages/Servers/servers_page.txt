@@ -1,9 +1,14 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          general_resource.txt
+Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${server_tab}     servers_tab
+${Show_Filters_button}    togglefilters
+${Refresh_List_button1}    servers_refresh1
+${Refresh_List_button2}    servers_refresh2
+${Export_List_button1}    servers_export1
+${Export_List_button2}    servers_export2
 
 *** Keywords ***
 Open Servers tab

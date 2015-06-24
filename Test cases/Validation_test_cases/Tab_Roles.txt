@@ -11,6 +11,7 @@ Resource          ../../Flows/Roles/edit_rights.txt
 Resource          ../../Flows/Handhelds/hh_general.txt
 Resource          ../../Flows/Policies/policy_general.txt
 Resource          ../../Pages/Policies/policies_page.txt
+Resource          ../../Flows/Servers/servers_general.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -37,21 +38,84 @@ Resource          ../../Pages/Policies/policies_page.txt
 16312 User with erase handheld data right
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Select Wipe GFE
+    Sign Out
+    Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Handhelds tab
+    Sign Out
+    set selenium timeout    1
     [Teardown]    Clean up roles
 
 16313 User has the right to view OTA setup PINs.
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Select View OTA
+    Go to Handhelds tab
+    Add a HH
+    Sign Out
+    Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Handhelds tab
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Sign Out
+    set selenium timeout    1
     [Teardown]    Clean up roles
 
 16314 User with manage servers right
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Select Manage Servers
+    Sign Out
+    Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Servers tab
+    Element should be enabled    ${Refresh_List_button1}
+    Element should be enabled    ${Export_List_button1}
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Sign Out
+    set selenium timeout    1
     [Teardown]    Clean up roles
 
 16316 User with manage Roles right
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Select Manage roles
+    Sign Out
+    Role member login
+    Go to Roles tab
+    Page should contain element    ${Add_role_button}
+    Page should contain element    ${Delete_role_button}
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Sign Out
+    set selenium timeout    1
     [Teardown]    Clean up roles
 
 16317 User with manage OTA Email templates right
@@ -166,4 +230,7 @@ Resource          ../../Pages/Policies/policies_page.txt
 1682 Verify functionality of Helpdesk role
 
 test
-    Login->Roles
+    Login
+    Go to Handhelds tab
+    Add a HH
+    Delete the HH

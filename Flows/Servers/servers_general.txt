@@ -1,0 +1,9 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Pages/Servers/servers_page.txt
+
+*** Keywords ***
+Go to Servers tab
+    Page should contain    Servers
+    Open Servers tab
+    Location should be    ${GMC_URL}/servers.do?filterType=

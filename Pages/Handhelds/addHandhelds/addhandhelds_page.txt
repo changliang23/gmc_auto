@@ -1,0 +1,43 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../../Config/Resource/general_resource.txt
+
+*** Variables ***
+${Find_user_text}    addhandhelds_search_text
+${HH_Look_New_button}    addhandhelds_search
+${HH_Search_Result_list}    list_scroller
+${HH_Add_button}    addhandhelds_add
+${HH_Add_button2}    addhandhelds_add2
+${HH_Cancel_button}    actionbar_button
+${HH_Add_All_button}    /html/body/form/div/table[1]/tbody/tr[2]/td/div/table[1]/tbody/tr/td[6]/div/a
+${HH_Policy_Set_dropdownlist}    selectpolicySet
+${HH_GMMS_dropdownlist}    selectgmmserver
+${HH_collection_list}    collection
+
+*** Keywords ***
+Find user
+    Input text    ${Find_user_text}    ${search_user}
+
+HH Look Now
+    Click Button    ${HH_Look_New_button}
+
+Select from search list
+    Click Link    ${search_user_id}
+
+HH Add All
+    Click Link    xpath=${HH_Add_All_button}
+
+HH select policy
+    Select From List By Value
+
+HH select GMMS
+    Select From List By Value
+
+Unselect from collection list
+    Click Link    ${search_user}
+
+HH Add
+    Click Button    ${HH_Add_button}
+
+HH Cancel
+    Click Button    ${HH_Cancel_button}

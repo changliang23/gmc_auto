@@ -1,0 +1,7 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Pages/Settings/settings_page.txt
+
+*** Keywords ***
+Go to Settings tab
+    Page should contain    Settings

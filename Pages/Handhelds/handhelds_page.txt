@@ -6,7 +6,39 @@ Resource          ../../Config/Resource/general_resource.txt
 ${handheld_tab}    handhelds_tab
 ${Add_Handhelds1}    handhelds_add1
 ${Add_Handhelds2}    handhelds_add2
+${Select_Import/Export_Action_dropdownlist}    action_select
+${Apply_Action_dropdownlist1}    handhelds_more_select1
+${Apply_Action_dropdownlist2}    handhelds_more_select2
+${Apply_Policy_Set_dropdownlist1}    handheldsPolicySlct1
+${Apply_Policy_Set_dropdownlist2}    handheldsPolicySlct2
+${HH_Search_HH_text}    handhelds_search_text
+${HH_Search_button}    handhelds_search_btn
+${HH_Clear_button}    /html/body/form[1]/div[3]/ul/li[1]/input[3]
+${Enable_all_button}    /html/body/form[1]/div[3]/div[3]/table/thead/tr/th[1]/input
+${Confirm_Yes}    handheld_action_confirm_yes
+${Confirm_No}     handheld_action_confirm_no
 
 *** Keywords ***
 Open Handhelds tab
     Click Element    ${handheld_tab}
+
+Add HH
+    Click Element    ${Add_Handhelds1}
+
+Input Search HH
+    Input Text    ${HH_Search_HH_text}    ${search_user}
+
+Search HH
+    Click button    ${HH_Search_button}
+
+Clear search
+    Click Link    xpath=${HH_Clear_button}
+
+Enable all HH
+    Select Checkbox    xpath=${Enable_all_button}
+
+Confirm Yes
+    Click Button    ${Confirm_Yes}
+
+Confirm No
+    Click Button    ${Confirm_No}

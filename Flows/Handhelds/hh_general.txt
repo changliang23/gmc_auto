@@ -1,9 +1,36 @@
 *** Settings ***
 Library           Selenium2Library
 Resource          ../../Pages/Handhelds/handhelds_page.txt
+Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
 
 *** Keywords ***
 Go to Handhelds tab
     Page should contain    Handhelds
     Open Handhelds tab
     Location should be    ${GMC_URL}/handhelds.do
+
+Add a HH
+    Element should be enabled    ${Add_Handhelds1}
+    Add HH
+    sleep    2
+    Location should be    ${GMC_URL}/addHandhelds.do
+    Page should contain    Find user or device
+    Find user
+    Element should be enabled    ${HH_Look_New_button}
+    HH Look Now
+    Page should contain    ${search_user}
+    HH Add All
+    Element should be enabled    ${HH_Add_button}
+    HH Add
+    Page should contain    ${search_user}
+
+Delete the HH
+    Page should contain    ${search_user}
+    Input Search HH
+    Search HH
+    Page should contain    ${search_user}
+    Enable all HH
+    Select From List By Value    ${Apply_Action_dropdownlist1}    ${Delete_HH}
+    Confirm Yes
+    Go to Handhelds tab
+    Page should not contain    ${search_user}
