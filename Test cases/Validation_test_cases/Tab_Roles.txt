@@ -205,13 +205,35 @@ Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.t
 16353 Users in a group added to a Role
 
 12744 Add a role to the EMF console
-    Login GMC
-    Open Roles tab
-    Add Role
+    [Setup]    Login->Roles
+    Add custom role
+    Page should contain    @{Roles Rights}[0]
+    Sign out
+    [Teardown]    Clean up Roles
 
 12745 Delete: role from console
+    [Setup]    Login->Roles
+    Add custom role
+    Page should contain    @{Roles Rights}[0]
+    Sign out
+    Login
+    Go to Roles tab
+    Delete Custom Role
+    Sign out
+    [Teardown]
 
 12746 Verify user information and his rights
+    [Setup]    Login->Roles
+    Add custom role
+    Page should contain    @{Roles Rights}[0]
+    Sign out
+    Login
+    Go to Roles tab
+    Select Custom Role
+    Add Role Member
+    Click Link    ${search_user}
+    Element should be enabled    @{Roles Rights}[0]
+    [Teardown]
 
 12747 Self Service User Modifies the URL to be in an Admin role
 
