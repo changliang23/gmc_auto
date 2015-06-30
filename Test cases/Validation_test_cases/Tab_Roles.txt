@@ -272,7 +272,7 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
     Radio button should be set to    type    viewOnly
     sleep    1
     Sign out
-    [Teardown]
+    [Teardown]    Clean up roles
 
 12747 Self Service User Modifies the URL to be in an Admin role
 
