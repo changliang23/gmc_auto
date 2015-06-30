@@ -183,6 +183,21 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
     [Teardown]    Clean up roles
 
 16322 All rights - Cancel button
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Change rights
+    Select view-only right
+    Change rights
+    Select All Rights
+    Cancel rights
+    Change rights
+    Radio Button Should Be Set To    type    viewOnly
+    Cancel Rights
+    Sign Out
+    [Teardown]    Clean up roles
 
 16323 Custom radio button - Cancel button
 
