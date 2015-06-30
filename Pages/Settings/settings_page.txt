@@ -1,10 +1,78 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          general_resource.txt
+Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
 ${setting_tab}    settings_tab
+${Server_info}    /html/body/div[2]/div/ul[1]/li[1]/a
+${Directory}      /html/body/div[2]/div/ul[1]/li[2]/a
+${Login_settings}    /html/body/div[2]/div/ul[2]/li[1]/a
+${Policy}         /html/body/div[2]/div/ul[2]/li[2]/a
+${Certificates}    /html/body/div[2]/div/ul[2]/li[3]/a
+${Backup}         /html/body/div[2]/div/ul[2]/li[4]/a
+${Messaging_templates}    /html/body/div[2]/div/ul[2]/li[5]/a
+${Secure_messaging}    /html/body/div[2]/div/ul[2]/li[6]/a
+${Good_Mobile_Access}    /html/body/div[2]/div/ul[2]/li[7]/a
+${Move_HH}        /html/body/div[2]/div/ul[2]/li[8]/a
+${Reports}        /html/body/div[2]/div/ul[2]/li[9]/a
+${Superuser}      /html/body/div[2]/div/ul[2]/li[10]/a
+${Enterprise_Servers}    /html/body/div[2]/div/ul[2]/li[11]/a
+${Custom_Software}    /html/body/div[2]/div/ul[3]/li[1]/a
+${Third-party_Applications}    /html/body/div[2]/div/ul[3]/li[2]/a
+${Authentication_Delegates}    /html/body/div[2]/div/ul[3]/li[3]/a
+${Volume_Purchased_Applications}    /html/body/div[2]/div/ul[3]/li[4]/a
 
 *** Keywords ***
 Open Settings tab
     Click Element    ${setting_tab}
+
+Go to Server Info
+    Click Element    xpath=${Server_info}
+
+Go to Directory
+    Click Element    Xpath=${Directory}
+
+Go to Login Settings
+    Click Element    xpath=${Login_settings}
+
+Go to Policy
+    Click Element    xpath=${Policy}
+
+Go to Certificates
+    Click Element    xpath=${Certificates}
+
+Go to Backup
+    Click Element    xpath=${Backup}
+
+Go to Messaging Templates
+    Click Element    xpath=${Messaging_templates}
+
+Go to Secure Messaging
+    Click Element    xpath=${Secure_messaging}
+
+Go to Good Mobile Access
+    Click Element    xpath=${Good_Mobile_Access}
+
+Go to Move HH
+    Click Element    xpath=${Move_HH}
+
+Go to Reports
+    Click Element    xpath=${Reports}
+
+Go to Superuser
+    Click Element    xpath=${Superuser}
+
+Go to Enterprise Servers
+    Click Element    xpath=${Enterprise_Servers}
+
+Go to Custom Software
+    Click Element    xpath=${Custom_Software}
+
+Go to Third-party Applications
+    Click Element    xpath=${Third-party_Applications}
+
+Go to Authentication Delegates
+    Click Element    xpath=${Authentication_Delegates}
+
+Go to Volume Purchased Applications
+    Click Element    ${Volume_Purchased_Applications}

@@ -5,3 +5,5 @@ Resource          ../../Pages/Settings/settings_page.txt
 *** Keywords ***
 Go to Settings tab
     Page should contain    Settings
+    Open Settings tab
+    Location should be    ${GMC_URL}/settings.do

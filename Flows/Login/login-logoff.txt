@@ -2,6 +2,7 @@
 Library           Selenium2Library
 Resource          ../../Config/Resource/general_resource.txt
 Resource          ../../Pages/Login/login_page.txt
+Library           ../../Test cases/src/entrypoint.py
 
 *** Keywords ***
 Login
@@ -22,3 +23,7 @@ Role member login
     Input Domain
     Click Sign In button
     Location should be    ${GMC_URL}/home.do
+
+Close
+    Close Browser
+    Kill Driver
