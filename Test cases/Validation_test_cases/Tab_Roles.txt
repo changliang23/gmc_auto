@@ -1,6 +1,6 @@
 *** Settings ***
 Suite Setup       Open Login page
-Suite Teardown    Close Browser
+Suite Teardown    Close
 Library           Selenium2Library
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/addRoleMembers/addRoleMembers_page.txt
@@ -13,6 +13,9 @@ Resource          ../../Flows/Policies/policy_general.txt
 Resource          ../../Pages/Policies/policies_page.txt
 Resource          ../../Flows/Servers/servers_general.txt
 Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.txt
+Library           ../src/entrypoint.py
+Resource          ../../Flows/Settings/settings_general.txt
+Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -137,6 +140,23 @@ Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.t
     [Teardown]    Clean up roles
 
 16317 User with manage OTA Email templates right
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Select Manage email temp
+    Sign Out
+    Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Settings tab
+    Go to Messaging Templates
+    Page should contain element    xpath=${Copy DAPRE}
+    Sign Out
+    set selenium timeout    1
+    [Teardown]    Clean up roles
 
 16318 User with Add and remove custom software right
 

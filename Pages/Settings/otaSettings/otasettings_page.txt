@@ -1,0 +1,10 @@
+*** Variables ***
+${Delete_email_template}    settings_otaemail_delete
+${Copy DAPRE}     /html/body/div[3]/form/div[4]/table/tbody/tr[2]/td[6]/a
+${Copy DAPRE HTML}    /html/body/div[3]/form/div[4]/table/tbody/tr[3]/td[6]/a
+${Copy DGMM}      /html/body/div[3]/form/div[4]/table/tbody/tr[4]/td[6]/a
+${Copy DGMM HTML}    /html/body/div[3]/form/div[4]/table/tbody/tr[5]/td[6]/a
+${Copy DGMMWER}    /html/body/div[3]/form/div[4]/table/tbody/tr[6]/td[6]/a
+${Copy DGMMWER HTML}    /html/body/div[3]/form/div[4]/table/tbody/tr[7]/td[6]/a
+${Copy GPA}       /html/body/div[3]/form/div[4]/table/tbody/tr[8]/td[6]/a
+${Copy GPA HTML}    /html/body/div[3]/form/div[4]/table/tbody/tr[9]/td[6]/a
