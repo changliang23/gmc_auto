@@ -140,6 +140,7 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
     [Teardown]    Clean up roles
 
 16317 User with manage OTA Email templates right
+    [Tags]    Roles
     [Setup]    Login->Roles
     Add Custom Role
     set selenium timeout    2
@@ -165,6 +166,21 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
 16320 Verify Tab functionality on Add Role Members tab
 
 16321 View only rights - Cancel button
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Change rights
+    Select All Right
+    Change rights
+    Select view-only
+    Cancel rights
+    Change rights
+    Radio Button Should Be Set To    type    all
+    Cancel Rights
+    Sign Out
+    [Teardown]    Clean up roles
 
 16322 All rights - Cancel button
 

@@ -549,3 +549,17 @@ Unselect Manage roles
     Radio Button Should Be Set To    type    custom
     Checkbox Should Not Be Selected    ${Manage_roles}
     Cancel Rights
+
+Select all right
+    Select All Rights
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    all
+    Cancel Rights
+
+Select view-only right
+    Select view-only
+    Update Rights
+    Change rights
+    Radio Button Should Be Set To    type    viewOnly
+    Cancel Rights

@@ -10,7 +10,7 @@ ${Cancel_CustomRole_button}    addrole_cancel
 
 *** Keywords ***
 Input Role name
-    Input Text    ${role_name}    @{Custom_role_name}[1]
+    Input Text    ${role_name}    ${Custom_role_name}
 
 Input Role description
     Input Text    xpath=${role_description}    ${Custom_role_description}

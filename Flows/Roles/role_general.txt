@@ -23,8 +23,8 @@ Add Custom Role
     sleep    2
 
 Select Custom Role
-    Page should contain    @{Custom_role_name}[1]
-    Click Link    @{Custom_role_name}[1]
+    Page should contain    ${Custom_role_name}
+    Click Link    ${Custom_role_name}
     Page should contain    ${Custom_role_description}
 
 Add Role Member
