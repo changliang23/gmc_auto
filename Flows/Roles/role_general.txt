@@ -8,7 +8,7 @@ Resource          ../Login/login-logoff.txt
 Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
-@{Roles Rights}    View Only Administration
+@{Roles Rights}    View Only Administration    \    Self Service     Self Service
 
 *** Keywords ***
 Add Custom Role
@@ -72,3 +72,19 @@ Clean up roles
 Login->Roles
     Login
     Go to Roles tab
+
+Add Role Member_R
+    Element should be enabled    ${Add_member_button1}
+    Add members
+    sleep    2
+    Page should contain    Domain
+    Input Text    ${Look_For_text}    @{search_user}[0]
+    Select Domain
+    Input Text    ${Look_For_text}    @{search_user}[0]
+    Element should be enabled    ${Look_Now_button}
+    Look Now
+    Page should contain    @{search_user}[0]
+    Add All
+    Element should be enabled    ${Add_button}
+    Add member
+    Page should contain    @{search_user}[0]

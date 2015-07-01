@@ -16,6 +16,7 @@ Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.t
 Library           ../src/entrypoint.py
 Resource          ../../Flows/Settings/settings_general.txt
 Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
+Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -358,6 +359,15 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
     [Teardown]    Clean up roles
 
 12747 Self Service User Modifies the URL to be in an Admin role
+    [Setup]    Login->Roles
+    Click Link    ${Self_Service_link}
+    Add Role Member_R
+    Sign out
+    Login with SS user
+    Page should contain    @{Roles Rights}[1]
+    Go to    ${GMC_URL}/handhelds.do
+    sleep    1
+    SS User don't have Admin Rights
 
 1675_1 Search for handhelds - "Look For:" field validation
 

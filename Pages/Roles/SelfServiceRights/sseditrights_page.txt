@@ -89,3 +89,45 @@ Update SS Rights
 
 Cancel SS Rights
     Click Element    ${Cancel_SS_Rights}
+
+SS user don't have Admin Rights
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should not contain    Welcome
+    go back
+    sleep    1
+    Page should contain     Welcome
+    Go to    ${GMC_URL}/policies.do
+    sleep    1
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should not contain    Welcome
+    go back
+    sleep    1
+    Page should contain     Welcome
+    Go to    ${GMC_URL}/policyDetails.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should not contain    Welcome
+    go back
+    sleep    1
+    Page should contain     Welcome
+    Go to    ${GMC_URL}/policyDetails.do
+    Page should contain     Welcome
+    go back
+    sleep    1
+    Page should contain     Welcome
+    Go to    ${GMC_URL}/policyDetails.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should not contain    Welcome
+    go back
+    sleep    1
+    Page should contain     Welcome
+    Go to    ${GMC_URL}/policyDetails.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should not contain    Welcome
+    go back
+    sleep    1
+    Page should contain     Welcome
+    Go to    ${GMC_URL}/servers.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should not contain    Welcome
+    go back
+    Page should contain     Welcome
