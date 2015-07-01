@@ -200,12 +200,80 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
     [Teardown]    Clean up roles
 
 16323 Custom radio button - Cancel button
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Change rights
+    Select view-only right
+    Change rights
+    Select Custom
+    Enable Add HH
+    Cancel Rights
+    Change rights
+    Radio Button Should Be Set To    type    viewOnly
+    Checkbox Should Not Be Selected    ${Add_handheld}
+    Cancel rights
+    Sign Out
+    [Teardown]    Clean up roles
 
 16324 Delete Handheld option - Cancel button
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Change rights
+    Select view-only right
+    Change rights
+    Select Custom
+    Enable Delete HH
+    Cancel Rights
+    Change rights
+    Radio Button Should Be Set To    type    viewOnly
+    Checkbox Should Not Be Selected    ${Delete_handheld}
+    Cancel rights
+    Sign Out
+    [Teardown]    Clean up roles
 
 16325 Add Handheld option - Cancel button
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Change rights
+    Select view-only right
+    Change rights
+    Select Custom
+    Enable Add HH
+    Cancel Rights
+    Change rights
+    Radio Button Should Be Set To    type    viewOnly
+    Checkbox Should Not Be Selected    ${Add_handheld}
+    Cancel rights
+    Sign Out
+    [Teardown]    Clean up roles
 
 16326 Add more than one Handheld option - Cancel button
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Change rights
+    Select view-only right
+    Change rights
+    Select Custom
+    Enable Add additional HH
+    Cancel Rights
+    Change rights
+    Radio Button Should Be Set To    type    viewOnly
+    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Cancel rights
+    Sign Out
+    [Teardown]    Clean up roles
 
 16327 Manage custom policies and software option - Cancel button
 
