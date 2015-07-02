@@ -1,0 +1,2 @@
+*** Settings ***
+Resource          ../../../Flows/Login/login-logoff.txt

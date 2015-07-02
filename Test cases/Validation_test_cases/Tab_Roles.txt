@@ -480,13 +480,22 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 12747 Self Service User Modifies the URL to be in an Admin role
     [Setup]    Login->Roles
     Click Link    ${Self_Service_link}
-    Add Role Member_R
+    Add Role Member
     Sign out
     Login with SS user
     Page should contain    @{Roles Rights}[1]
     Go to    ${GMC_URL}/handhelds.do
     sleep    1
-    SS User don't have Admin Rights
+    SS user go to browsers/handhelds
+    SS user go to browsers/policies
+    Login with SS user
+    SS user go to browsers/policy details
+    SS user go to browsers/servers
+    Login with SS user
+    SS user go to browsers/roles
+    Login with SS user
+    SS user go to browsers/settings
+    [Teardown]    Delete SS Member
 
 1675_1 Search for handhelds - "Look For:" field validation
 

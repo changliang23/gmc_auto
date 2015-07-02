@@ -30,7 +30,7 @@ Close
 
 Login with SS user
     Location should be    ${GMC_URL}/login.do
-    Input Text    ${Username_id}    @{search_user}[0]
+    Input Text    ${Username_id}    ${search_user}
     Input Text    ${Password_id}    ${Password}
     Input Text    ${Domain_id}    ${Domain}
     Click Sign In button

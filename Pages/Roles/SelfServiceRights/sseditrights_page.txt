@@ -1,5 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
+Resource          ../../../Flows/Login/login-logoff.txt
 
 *** Variables ***
 ${Add_GFE}        addHandheldSelfService
@@ -95,39 +96,65 @@ SS user don't have Admin Rights
     Page should not contain    Welcome
     go back
     sleep    1
-    Page should contain     Welcome
+    Page should contain    Welcome @{search_user}[0]
     Go to    ${GMC_URL}/policies.do
-    sleep    1
-    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should contain    Sign in to Good Mobile Control
+    Page should not contain    Welcome
+    Login with SS user
+    Page should contain    Welcome @{search_user}[0]
+    Go to    ${GMC_URL}/policyDetails.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later
     Page should not contain    Welcome
     go back
     sleep    1
-    Page should contain     Welcome
+    Page should contain    Welcome @{search_user}[0]
+    Page should contain    Welcome
+    go back
+    sleep    1
+    Page should contain    Welcome
     Go to    ${GMC_URL}/policyDetails.do
     Page should contain    Sorry we can not process the page you requested at this time, please try again later.
     Page should not contain    Welcome
     go back
     sleep    1
-    Page should contain     Welcome
-    Go to    ${GMC_URL}/policyDetails.do
-    Page should contain     Welcome
-    go back
-    sleep    1
-    Page should contain     Welcome
+    Page should contain    Welcome
     Go to    ${GMC_URL}/policyDetails.do
     Page should contain    Sorry we can not process the page you requested at this time, please try again later.
     Page should not contain    Welcome
     go back
     sleep    1
-    Page should contain     Welcome
-    Go to    ${GMC_URL}/policyDetails.do
-    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
-    Page should not contain    Welcome
-    go back
-    sleep    1
-    Page should contain     Welcome
+    Page should contain    Welcome
     Go to    ${GMC_URL}/servers.do
     Page should contain    Sorry we can not process the page you requested at this time, please try again later.
     Page should not contain    Welcome
     go back
-    Page should contain     Welcome
+    Page should contain    Welcome
+
+SS user go to browsers/handhelds
+    Go to    ${GMC_URL}/handhelds.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Page should contain    Back
+    go back
+    sleep    1
+    Page should contain    Welcome
+
+SS user go to browsers/policies
+    Go to    ${GMC_URL}/policies.do
+    Page should contain    Sign in to Good Mobile Control
+
+SS user go to browsers/policy details
+    Go to    ${GMC_URL}/policyDetails.do
+    Page should contain    Sorry we can not process the page you requested at this time, please try again later.
+    Go back
+
+SS user go to browsers/servers
+    Go to    ${GMC_URL}/servers.do
+    Page should contain    Sign in to Good Mobile Control
+
+SS user go to browsers/roles
+    Go to    ${GMC_URL}/roles.do
+    Page should contain    Sign in to Good Mobile Control
+
+SS user go to browsers/settings
+    Go to    ${GMC_URL}/settings.do
+    Page should contain    Sign in to Good Mobile Control
