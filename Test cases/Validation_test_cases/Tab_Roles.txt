@@ -286,11 +286,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable Manage policy
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${Manage_policy}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
@@ -305,11 +305,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable Wipe GFE
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${Wipe_GFE}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
@@ -324,11 +324,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable View OTA
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${View_OTA}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
@@ -343,11 +343,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable Manage servers
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${Manage_servers}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
@@ -362,11 +362,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable Manage roles
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${Manage_roles}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
@@ -381,11 +381,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable Manage email temp
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${Manage_email_temp}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
@@ -400,11 +400,11 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     Select view-only right
     Change rights
     Select Custom
-    Enable Add additional HH
+    Enable Manage software
     Cancel Rights
     Change rights
     Radio Button Should Be Set To    type    viewOnly
-    Checkbox Should Not Be Selected    ${Add_additional_handheld}
+    Checkbox Should Not Be Selected    ${Manage_software}
     Cancel rights
     Sign Out
     [Teardown]    Clean up roles
