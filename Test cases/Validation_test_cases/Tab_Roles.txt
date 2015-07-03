@@ -461,40 +461,6 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 
 16353 Users in a group added to a Role
 
-12744 Add a role to the EMF console
-    [Setup]    Login->Roles
-    Add custom role
-    Page should contain    ${Custom_role_name}
-    Sign out
-    [Teardown]    Clean up Roles
-
-12745 Delete: role from console
-    [Setup]    Login->Roles
-    Add custom role
-    Page should contain    @{Roles Rights}[0]
-    Sign out
-    Login
-    Go to Roles tab
-    select custom role
-    Delete Custom Role
-    Sign out
-    [Teardown]
-
-12746 Verify user information and his rights
-    [Setup]    Login->Roles
-    Add custom role
-    Page should contain    @{Roles Rights}[0]
-    Sign out
-    Login
-    Go to Roles tab
-    Select Custom Role
-    Add Role Member
-    Click Link    ${search_user}
-    Radio button should be set to    type    viewOnly
-    sleep    1
-    Sign out
-    [Teardown]    Clean up roles
-
 12747 Self Service User Modifies the URL to be in an Admin role
     [Setup]    Login->Roles
     Click Link    ${Self_Service_link}
@@ -513,9 +479,40 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     SS user go to browsers/roles
     Login with SS user
     SS user go to browsers/settings
-    [Teardown]    Delete SS Member
+    Login with SS user
+    sign out
+    Delete SS Member
+    Sign out
+    sleep    2
+    set selenium timeout    1
+    [Teardown]
 
 1675_1 Search for handhelds - "Look For:" field validation
+    [Setup]    Login->Roles
+    Add custom role
+    Page should contain    @{Roles Rights}[0]
+    Sign out
+    Login
+    Go to Roles tab
+    Select Custom Role
+    Add members
+    sleep    2
+    Page should contain    Domain
+    Input Text    ${Look_For_text}    \ \ \ ${search_user} \ \ \ \
+    sleep    4
+    Select Domain
+    Look Now
+    Element should be enabled    ${Look_Now_button}
+    sleep    4
+    Page should contain    ${search_user}
+    Add All
+    Element should be enabled    ${Add_button}
+    Add member
+    Page should contain    ${search_user}
+    sleep    4
+    sign out
+    set selenium timeout    1
+    [Teardown]    Clean up roles
 
 1676 Add User(s) or Group(s): to an existing role
     Login
