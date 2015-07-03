@@ -161,10 +161,28 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
     [Teardown]    Clean up roles
 
 16318 User with Add and remove custom software right
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Select Manage email temp
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16319 Verify Tab functionality on Roles tab
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    [Teardown]    Clean up roles
 
 16320 Verify Tab functionality on Add Role Members tab
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    [Teardown]    Clean up roles
 
 16321 View only rights - Cancel button
     [Tags]    Roles
