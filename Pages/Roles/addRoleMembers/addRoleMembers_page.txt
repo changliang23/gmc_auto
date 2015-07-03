@@ -40,3 +40,6 @@ Add All
 
 Remove All
     Click Button    ${Remove_All_button}
+
+Look For Group
+    Input Text    ${Look_For_text}    ${search_group}

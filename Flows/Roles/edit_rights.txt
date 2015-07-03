@@ -2,6 +2,7 @@
 Library           Selenium2Library
 Resource          ../../Pages/Roles/editRights/editRights_page.txt
 Resource          ../../Pages/Roles/roles_page.txt
+Resource          role_general.txt
 
 *** Keywords ***
 Enable all rights
@@ -563,3 +564,9 @@ Select view-only right
     Change rights
     Radio Button Should Be Set To    type    viewOnly
     Cancel Rights
+
+User have Administrator Rights
+    Go to Roles tab
+    click link    Administrator
+    Page should contain    Custom
+    Click element    roles_change_rights_link

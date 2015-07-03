@@ -35,3 +35,11 @@ Login with SS user
     Input Text    ${Domain_id}    ${Domain}
     Click Sign In button
     Location should be    ${GMC_URL}/selfService.do
+
+group user login
+    Location should be    ${GMC_URL}/login.do
+    Input Text    ${Username_id}    ${group_user}
+    Input Password
+    Input Domain
+    Click Sign In button
+    Location should be    ${GMC_URL}/home.do

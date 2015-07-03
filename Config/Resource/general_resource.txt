@@ -20,3 +20,5 @@ ${servers_tab}    /html/body/div[1]/div[5]/a[4]
 ${settings_tab}    /html/body/div[1]/div[5]/a[6]
 ${Delete_HH}      deleteHandhelds
 @{search_user}    rnzhang04buzen
+${search_group}    GMC_QA_testGroup1
+${group_user}     marcin01buzen

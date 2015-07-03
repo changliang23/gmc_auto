@@ -22,6 +22,11 @@ Add Custom Role
     Page should contain    ${Custom_role_name}
     sleep    2
 
+Select Administrator Role
+    Page should contain    Administrator
+    Click Link    Administrator
+    Page should contain    Administrator
+
 Select Custom Role
     Page should contain    ${Custom_role_name}
     Click Link    ${Custom_role_name}
@@ -79,3 +84,23 @@ Delete SS Member
     Go to Roles Tab
     Go to Self Service
     Delete Role member
+
+Add Role Group
+    Element should be enabled    ${Add_member_button1}
+    Add members
+    sleep    2
+    Page should contain    Domain
+    Page should contain    Look For
+    Select Domain
+    Look For
+    Element should be enabled    ${Look_Now_button}
+    Look Now
+    Page should contain    ${search_user}
+    Add All
+    Element should be enabled    ${Add_button}
+    Add member
+    Page should contain    ${search_user}
+
+verify Administrator Rights
+    Go to Roles tab
+    Select Administrator Role
