@@ -9,6 +9,7 @@ Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
 @{Roles Rights}    View Only Administration    \    Self Service    Self Service
+${Lack_Of_Privileges}    Invalid credentials or insufficient privileges
 
 *** Keywords ***
 Add Custom Role
@@ -53,7 +54,7 @@ Delete Role Member
     Delete member
     confirm action
     Choose Ok On Next Confirmation
-    Sleep    5
+    Sleep    3
     page should not contain    ${search_user}
 
 Delete Custom Role
@@ -100,6 +101,12 @@ Add Role Group
     Element should be enabled    ${Add_button}
     Add member
     Page should contain    ${search_user}
+
+Delete Administrator Member
+    Login
+    Go to Roles Tab
+    Go to Administrator
+    Delete Role member
 
 verify Administrator Rights
     Go to Roles tab

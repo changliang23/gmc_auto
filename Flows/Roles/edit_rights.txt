@@ -570,3 +570,5 @@ User have Administrator Rights
     click link    Administrator
     Page should contain    Custom
     Click element    roles_change_rights_link
+    radio button should be set to     type    custom
+    Administrator Custom Rights
