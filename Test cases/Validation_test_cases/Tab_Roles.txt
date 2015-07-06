@@ -571,11 +571,25 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     User have Administrator Rights
     Sign out
     group user login
+    Sign out
+    [Teardown]    Delete Administrator Member
 
 1677 Delete user(s) or group(s) from a role
-    Login GMC
-    Open Roles tab
-    Go to Service Administrator
+    [Setup]    Login->Roles
+    Click Link    ${Self_Service_link}
+    Add Role Member
+    Sign out
+    Login with SS user
+    Page should contain    @{Roles Rights}[1]
+    sign out
+    Delete SS Member
+    Sign out
+    Location should be    ${GMC_URL}/login.do
+    Input Text    ${Username_id}    ${search_user}
+    Input Text    ${Password_id}    ${Password}
+    Input Text    ${Domain_id}    ${Domain}
+    Click Sign In button
+    Page should contain    ${Lack_Of_Privileges}
 
 1678 Edit role: Change Name Role and Description
 
