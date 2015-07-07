@@ -111,3 +111,18 @@ Delete Administrator Member
 verify Administrator Rights
     Go to Roles tab
     Select Administrator Role
+
+Select Services Administrator
+    Page should contain    Services Administrator
+    Click Link    Services Administrator
+    Page should contain    Services Administrator
+
+Select Help Desk
+    Page should contain    Help Desk
+    Click Link    Help Desk
+    Page should contain    Help Desk
+
+Select Self Service
+    Page should contain    Self Service
+    Click Link    Self Service
+    Page should contain    Self Service

@@ -185,6 +185,15 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
 16319 Verify Tab functionality on Roles tab
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Services Administrator
+    Change rights
+    Cancel rights
+    Select Administrator Role
+    Select Help Desk
+    Select Self Service
+    Select Custom Role
     [Teardown]    Clean up roles
 
 16320 Verify Tab functionality on Add Role Members tab
