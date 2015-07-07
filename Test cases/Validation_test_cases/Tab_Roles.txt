@@ -17,7 +17,7 @@ Library           ../src/entrypoint.py
 Resource          ../../Flows/Settings/settings_general.txt
 Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
 Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
-Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
+Resource          ../../Pages/Roles/roles_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -170,16 +170,9 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     Add Role Member
     Change rights
     Select Custom
-    Select Manage software
+    Select Manage email temp
     Sign Out
     Role member login
-    Page should not contain element    xpath=${roles_tab}
-    Go to Settings tab
-    Go to Custom Software
-    Element should be enabled    ${customsoftware_add}
-    Element should be enabled    ${customsoftware_delete}
-    Sign Out
-    set selenium timeout    1
     [Teardown]    Clean up roles
 
 16319 Verify Tab functionality on Roles tab
@@ -610,6 +603,28 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     Page should contain    ${Lack_Of_Privileges}
 
 1678 Edit role: Change Name Role and Description
+    [Setup]    Login->Roles
+    Open Roles tab
+    Go to Administrator
+    Add members
+    sleep    2
+    Select Domain
+    Look For group
+    Look Now
+    Add All
+    Add member
+    Verify Administrator Rights
+    User have Administrator Rights
+    Sign out
+    group user login
+    Sign out
+    login
+    Open Roles tab
+    Go to Administrator
+    Update Roles and Description
+    sleep    2
+    Restore Administrator Role Name and Description
+    [Teardown]
 
 1679 Modify rights: for an exisiting user
 

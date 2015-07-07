@@ -570,5 +570,15 @@ User have Administrator Rights
     click link    Administrator
     Page should contain    Custom
     Click element    roles_change_rights_link
-    radio button should be set to     type    custom
+    radio button should be set to    type    custom
     Administrator Custom Rights
+
+Update Roles and Description
+    Click Element    ${Update_Rights_Description}
+    clear element text    ${Edit_Role}
+    Input text    ${Edit_Role}    ${Update_Name}
+    clear element text    ${Edit_Description}
+    Input text    ${Edit_Description}    ${Update_Description}
+    Click Element    ${Save_button}
+    Page should contain    ${Update_Name}
+    Page should contain    ${Update_Description}

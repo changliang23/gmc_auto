@@ -19,6 +19,12 @@ ${Add_member_button2}    role_member_add2
 ${Delete_member_button2}    role_member_delete2
 ${Roles_list}     /html/body/form/div[1]/div/ul
 ${Enable_allMember_checkbox}    /html/body/form/div[2]/div[3]/table[2]/tbody/tr[1]/td[1]/input
+${Update_Rights_Description}    roles_change_link
+${Edit_Role}      //*[@id='editrole_table']/tbody/tr[1]/td[2]/input
+${Update_Name}    AbC!@#123
+${Update_Description}    QWE DES 123$%^
+${Edit_Description}    //*[@id='editrole_table']/tbody/tr[2]/td[2]/textarea
+${Save_button}    editrole_save
 
 *** Keywords ***
 Open Roles tab
@@ -49,7 +55,7 @@ Change rights
     Page should contain    ${Change_right_button}
     Click Element    ${Change_right_button}
 
-Change name
+Change Role name
     Click Element    ${Change_name_button}
 
 Add members
