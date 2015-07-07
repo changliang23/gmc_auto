@@ -18,6 +18,8 @@ Resource          ../../Flows/Settings/settings_general.txt
 Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
 Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 Resource          ../../Pages/Roles/roles_page.txt
+Resource          ../../Pages/Roles/changeRole/change_role.txt
+Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -170,19 +172,71 @@ Resource          ../../Pages/Roles/roles_page.txt
     Add Role Member
     Change rights
     Select Custom
-    Select Manage email temp
+    Select Manage software
     Sign Out
     Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Settings tab
+    Go to Custom Software
+    Element should be enabled    ${customsoftware_add}
+    Element should be enabled    ${customsoftware_delete}
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Sign Out
     [Teardown]    Clean up roles
 
 16319 Verify Tab functionality on Roles tab
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Services Administrator
+    Change rights
+    Cancel rights
+    Change role name
+    EditRole Cancel
+    Select Administrator Role
+    Change rights
+    Cancel rights
+    Change role name
+    EditRole Cancel
+    Select Help Desk
+    Change rights
+    Cancel rights
+    Change role name
+    EditRole Cancel
+    Select Self Service
+    Change rights
+    Cancel rights
+    Select Custom Role
+    Change rights
+    Cancel rights
+    Change role name
+    EditRole Cancel
+    Sign out
     [Teardown]    Clean up roles
 
 16320 Verify Tab functionality on Add Role Members tab
     [Tags]    Roles
     [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Services Administrator
+    Add role member
+    Delete role member
+    Select Administrator Role
+    Add role member
+    Delete role member
+    Select Help Desk
+    Add role member
+    Delete role member
+    Select Self Service
+    Add role member
+    Delete role member
+    Select Custom Role
+    Add role member
+    Delete role member
+    Sign out
     [Teardown]    Clean up roles
 
 16321 View only rights - Cancel button
