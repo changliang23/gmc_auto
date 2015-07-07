@@ -19,6 +19,7 @@ Resource          ../../Pages/Settings/otaSettings/otasettings_page.txt
 Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/changeRole/change_role.txt
+Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -171,9 +172,17 @@ Resource          ../../Pages/Roles/changeRole/change_role.txt
     Add Role Member
     Change rights
     Select Custom
-    Select Manage email temp
+    Select Manage software
     Sign Out
     Role member login
+    Page should not contain element    xpath=${roles_tab}
+    Go to Settings tab
+    Go to Custom Software
+    Element should be enabled    ${customsoftware_add}
+    Element should be enabled    ${customsoftware_delete}
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Sign Out
     [Teardown]    Clean up roles
 
 16319 Verify Tab functionality on Roles tab
