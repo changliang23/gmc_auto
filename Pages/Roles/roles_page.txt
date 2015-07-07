@@ -21,10 +21,6 @@ ${Roles_list}     /html/body/form/div[1]/div/ul
 ${Enable_allMember_checkbox}    /html/body/form/div[2]/div[3]/table[2]/tbody/tr[1]/td[1]/input
 ${Update_Rights_Description}    roles_change_link
 ${Edit_Role}      //*[@id='editrole_table']/tbody/tr[1]/td[2]/input
-${Update_Name}    AbC!@#123
-${Update_Description}    QWE DES 123$%^
-${Edit_Description}    //*[@id='editrole_table']/tbody/tr[2]/td[2]/textarea
-${Save_button}    editrole_save
 
 *** Keywords ***
 Open Roles tab
