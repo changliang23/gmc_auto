@@ -1,6 +1,17 @@
+*** Settings ***
+Library           Selenium2Library
+
 *** Variables ***
 ${Edit_Role}      //*[@id='editrole_table']/tbody/tr[1]/td[2]/input
 ${Update_Name}    AbC!@#123
 ${Edit_Description}    //*[@id='editrole_table']/tbody/tr[2]/td[2]/textarea
 ${Update_Description}    QWE DES 123$%^
-${Save_button}    editrole_save
+${editroleSave_button}    editrole_save
+${editroleCancel_button}    editrole_cancel
+
+*** Keywords ***
+EditRole Save
+    Click Element    ${editroleSave_button}
+
+EditRole Cancel
+    Click Element    ${editroleCancel_button}
