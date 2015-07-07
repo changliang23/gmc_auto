@@ -1,0 +1,3 @@
+*** Variables ***
+${customsoftware_add}    customsoftware_add
+${customsoftware_delete}    customsoftware_delete
