@@ -191,9 +191,18 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     Change rights
     Cancel rights
     Select Administrator Role
+    Change rights
+    Cancel rights
     Select Help Desk
+    Change rights
+    Cancel rights
     Select Self Service
+    Change rights
+    Cancel rights
     Select Custom Role
+    Change rights
+    Cancel rights
+    Sign out
     [Teardown]    Clean up roles
 
 16320 Verify Tab functionality on Add Role Members tab
