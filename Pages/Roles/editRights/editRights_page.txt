@@ -1,6 +1,7 @@
 *** Settings ***
 Library           Selenium2Library
 Resource          ../../../Config/Resource/general_resource.txt
+Resource          editRights_page.txt
 
 *** Variables ***
 ${Add_handheld}    addHandheld

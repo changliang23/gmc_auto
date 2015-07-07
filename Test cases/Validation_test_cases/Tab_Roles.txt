@@ -605,8 +605,14 @@ Resource          ../../Pages/Roles/roles_page.txt
     Go to Administrator
     Update Roles and Description
     sleep    2
-    Restore Administrator Role Name and Description
-    [Teardown]
+    Restore Administrator Roles and Description
+    Sleep    2
+    Verify Administrator Rights
+    User have Administrator Rights
+    Sign out
+    group user login
+    Sign out
+    [Teardown]    Delete Administrator member
 
 1679 Modify rights: for an exisiting user
 

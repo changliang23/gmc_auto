@@ -3,6 +3,8 @@ Library           Selenium2Library
 Resource          ../../Pages/Roles/editRights/editRights_page.txt
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          role_general.txt
+Resource          ../../Pages/Roles/editRights/editRights_page.txt
+Resource          ../../Pages/Roles/changeRole/change_role.txt
 
 *** Keywords ***
 Enable all rights
@@ -582,3 +584,12 @@ Update Roles and Description
     Click Element    ${Save_button}
     Page should contain    ${Update_Name}
     Page should contain    ${Update_Description}
+
+Restore Administrator Roles and Description
+    Click Link    ${Update_Name}
+    Click Element    ${Update_Rights_Description}
+    clear element text    ${Edit_Role}
+    Input text    ${Edit_Role}    Administrator
+    clear element text    ${Edit_Description}
+    Click Element    ${Save_button}
+    Page should contain    Administrator
