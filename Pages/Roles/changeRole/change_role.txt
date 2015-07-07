@@ -1,0 +1,2 @@
+*** Variables ***
+${Update_Rights_Description}    roles_change_link
