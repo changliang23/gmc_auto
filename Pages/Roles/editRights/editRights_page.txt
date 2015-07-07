@@ -35,7 +35,6 @@ ${Manage_enterprise_servers}    gcsManage
 ${Manage_roles}    manageRoles
 ${Update_button}    role_rights_save2
 ${Cancel_right_button}    role_rights_cancel
-${Update_Rights_Description}    roles_change_link
 
 *** Keywords ***
 Select View-only
@@ -273,6 +272,3 @@ Administrator Custom Rights
     checkbox should be selected    ${View_enterprise_servers}
     checkbox should be selected    ${Manage_enterprise_servers}
     checkbox should not be selected    ${Manage_roles}
-
-Update Roles and Description
-    Click Element    ${Update_Rights_Description}
