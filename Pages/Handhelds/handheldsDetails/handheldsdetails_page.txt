@@ -11,6 +11,7 @@ ${Messaging}      /html/body/div[2]/ul/li[6]/div
 ${Applications}    /html/body/div[2]/ul/li[7]/div
 ${Easy Activation}    /html/body/div[2]/ul/li[8]/div
 ${Regenerate_OTA}    handheld_details_regenotapin
+${handheld_details_changegmmserver}    handheld_details_changegmmserver
 
 *** Keywords ***
 Go to HH Info

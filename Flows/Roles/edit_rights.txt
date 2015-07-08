@@ -13,7 +13,7 @@ Enable all rights
     Enable Delete HH
     Enable View OTA
     Enable MDM profile
-    Select Lock GFE
+    Enable Lock GFE
     Enable Wipe GFE
     Enable Reset GFE
     Enable Set policy
