@@ -3,6 +3,7 @@ Library           Selenium2Library
 Resource          ../../Config/Resource/general_resource.txt
 Resource          ../../Pages/Login/login_page.txt
 Library           ../../Test cases/src/entrypoint.py
+Resource          ../../Pages/Handhelds/handhelds_page.txt
 
 *** Keywords ***
 Login
@@ -43,3 +44,15 @@ group user login
     Input Domain
     Click Sign In button
     Location should be    ${GMC_URL}/home.do
+
+Login with Custom user_Read
+    Location should be    ${GMC_URL}/login.do
+    Input Text    ${Username_id}    ${search_user}
+    Input Text    ${Password_id}    ${Password}
+    Input Text    ${Domain_id}    ${Domain}
+    Click Sign In button
+    Location should be    ${GMC_URL}/home.do
+    sleep    2
+    Page should contain    ${home_tab}
+    Page should contain    ${handheld_tab}
+    sleep    2

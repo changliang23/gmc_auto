@@ -669,6 +669,17 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     [Teardown]    Delete Administrator member
 
 1679 Modify rights: for an exisiting user
+    [Setup]    Login->Roles
+    Add custom role
+    Page should contain    ${Custom_role_name}
+    Page should contain    @{Roles Rights}[0]
+    Select Custom Role
+    Add Role Member
+    Click Link    ${search_user}
+    Radio button should be set to    type    viewOnly
+    sleep    1
+    Sign out
+    Login with Custom user_Read
 
 1680 Verify functionality of Service Adminstrator role
 
