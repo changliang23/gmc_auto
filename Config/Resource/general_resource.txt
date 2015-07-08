@@ -22,3 +22,5 @@ ${Delete_HH}      deleteHandhelds
 @{search_user}    rnzhang04buzen
 ${search_group}    GMC_QA_testGroup1
 ${group_user}     marcin01buzen
+${doublebyte_role_name}    测试
+${doublebyte_role_description}    说明

@@ -483,6 +483,24 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     [Teardown]    Clean up roles
 
 16335 Add a role to the GMC console - double byte
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Page should contain element    ${Add_role_button}
+    Add role
+    Page should contain element    ${role_name}
+    Input Text    ${role_name}    ${doublebyte_role_name}
+    Input Text    xpath=${role_description}    ${doublebyte_role_description}
+    Element should be enabled    ${Add_CustomRole_button}
+    Click Add Role
+    Page should contain    ${doublebyte_role_name}
+    sleep    2
+    Click Link    ${doublebyte_role_name}
+    Click Element    ${Delete_role_button}
+    confirm action
+    Choose Ok On Next Confirmation
+    sleep    2
+    page should not contain    ${doublebyte_role_name}
+    Sign out
 
 16336 Missing right - Add Handheld
 
