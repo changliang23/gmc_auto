@@ -20,6 +20,7 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/changeRole/change_role.txt
 Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
+Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -503,20 +504,164 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     Sign out
 
 16336 Missing right - Add Handheld
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Change rights
+    Unselect Add HH
+    Go to Handhelds tab
+    Add a HH
+    Sign Out
+    Role member login
+    Go to Handhelds tab
+    Element should be disabled    ${Add_Handhelds1}
+    Select the HH
+    Go to Messaging
+    Element should be disabled    ${handheld_details_changegmmserver}
+    Sign Out
+    set selenium timeout    1
+    Login
+    Go to Handhelds tab
+    Delete the HH
+    Sign Out
+    [Teardown]    Clean up roles
 
 16337 Missing right - Add Additional handheld
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Change rights
+    Unselect Add additional HH
+    Go to Handhelds tab
+    Add a HH
+    Sign Out
+    Role member login
+    Go to Handhelds tab
+    Element should be enabled    ${Add_Handhelds1}
+    Add HH
+    sleep    2
+    Location should be    ${GMC_URL}/addHandhelds.do
+    Page should contain    Find user or device
+    Find user
+    Element should be enabled    ${HH_Look_New_button}
+    HH Look Now
+    Page should contain    ${search_user}
+    HH Add All
+    Element should be enabled    ${HH_Add_button}
+    HH Add
+    Page should contain    Not authorized to enable additional handhelds for a user.
+    Sign Out
+    set selenium timeout    1
+    Login
+    Go to Handhelds tab
+    Delete the HH
+    Sign Out
+    [Teardown]    Clean up roles
 
 16338 Missing right - Delete handheld
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Unselect Delete HH
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16339 Missing right - View OTA Setup PIN
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Unselect View OTA
+    Unselect Add HH
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16340 Missing right - Erase handheld data and lock handheld
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Unselect Wipe GFE
+    Unselect Lock GFE
+    Unselect Delete HH
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16342 Missing right - Manage Roles
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Unselect Manage Roles
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16343 Missing right - Manage Custom Software
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Unselect Manage Software
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16344 Missing right - Manage OTA Email templates
+    [Tags]    Roles
+    [Setup]    Login->Roles
+    Add Custom Role
+    set selenium timeout    2
+    Select Custom Role
+    Add Role Member
+    Change rights
+    Select Custom
+    Enable All rights
+    Unselect Manage email temp
+    Sign Out
+    Role member login
+    [Teardown]    Clean up roles
 
 16345 Add Handheld right - operations
 
@@ -720,6 +865,11 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
 
 test
     Login
+<<<<<<< HEAD
     Go to Handhelds tab
     Add a HH
     Select the HH
+=======
+    Go to Settings tab
+    Go to Policy
+>>>>>>> 94aa6bbdfd41d0b6b2d0348f134e32a1828ad0e2
