@@ -13,3 +13,6 @@ ${Export_List_button2}    servers_export2
 *** Keywords ***
 Open Servers tab
     Click Element    ${server_tab}
+
+Refresh server list
+    click button    ${Refresh_List_button1}

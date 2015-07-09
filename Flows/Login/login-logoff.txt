@@ -4,6 +4,11 @@ Resource          ../../Config/Resource/general_resource.txt
 Resource          ../../Pages/Login/login_page.txt
 Library           ../../Test cases/src/entrypoint.py
 Resource          ../../Pages/Handhelds/handhelds_page.txt
+Resource          ../Handhelds/hh_general.txt
+Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.txt
+Resource          ../Policies/policy_general.txt
+Resource          ../Servers/servers_general.txt
+Resource          ../Settings/settings_general.txt
 
 *** Keywords ***
 Login
@@ -53,6 +58,32 @@ Login with Custom user_Read
     Click Sign In button
     Location should be    ${GMC_URL}/home.do
     sleep    2
-    Page should contain    ${home_tab}
-    Page should contain    ${handheld_tab}
+    Go to Handhelds tab
+    Select the HH
     sleep    2
+    go to OTA
+    Element text should be    //*[@id='ota_data']/table/tbody/tr[3]/td[2]    <unauthorized to view>
+    Element text should be    //*[@id='ota_data']/table/tbody/tr[4]/td[2]    <unauthorized to view>
+
+Login with Custom user_All rights
+    Location should be    ${GMC_URL}/login.do
+    Input Text    ${Username_id}    ${search_user}
+    Input Text    ${Password_id}    ${Password}
+    Input Text    ${Domain_id}    ${Domain}
+    Click Sign In button
+    Location should be    ${GMC_URL}/home.do
+    sleep    2
+    Go to Handhelds tab
+    Select the HH
+    sleep    2
+    go to OTA
+    Page Should Not Contain Textfield    <unauthorized to view>
+    Page Should Not Contain Textfield    <unauthorized to view>
+    Go to Handhelds tab
+    add a hh
+    Go to Policies tab
+    Create a policy set
+    Open Servers tab
+    Refresh server list
+    Open Settings tab
+    Update Policy Settings

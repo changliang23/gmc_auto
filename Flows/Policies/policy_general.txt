@@ -7,3 +7,13 @@ Go to Policies tab
     Page should contain    Policies
     Open Policies tab
     Location should be    ${GMC_URL}/policies.do
+
+Create a policy set
+    Click Create Button
+    sleep    1
+    Input policy Name
+    sleep    1
+    Input Policy Description
+    sleep    1
+    Click OK button
+    Page should contain    ${Policy_name}

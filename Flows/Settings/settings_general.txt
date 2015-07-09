@@ -7,3 +7,11 @@ Go to Settings tab
     Page should contain    Settings
     Open Settings tab
     Location should be    ${GMC_URL}/settings.do
+
+Update Policy Settings
+    go to policy
+    sleep    1
+    page should contain    Policy Settings
+    Select From List By Value    ${Policy_Sync_dropdownlist}    ${Policy_Sync_time}
+    click element    ${policy_setting_save}
+    page should contain    Saved successfully

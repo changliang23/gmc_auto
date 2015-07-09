@@ -1,0 +1,3 @@
+*** Settings ***
+Resource          ../Handhelds/hh_general.txt
+Resource          ../Policies/policy_general.txt

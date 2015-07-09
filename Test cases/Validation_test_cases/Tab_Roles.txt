@@ -696,8 +696,21 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     Click Link    ${search_user}
     Radio button should be set to    type    viewOnly
     sleep    1
+    Go to Handhelds tab
+    Add a HH
     Sign out
     Login with Custom user_Read
+    sign out
+    login
+    go to Roles tab
+    select custom role
+    change rights
+    Select all Rights
+    Update Rights
+    Page should contain    @{Roles Rights}[2]
+    Sign out
+    Login with Custom user_All rights
+    sleep    2
 
 1680 Verify functionality of Service Adminstrator role
 
@@ -710,4 +723,3 @@ test
     Go to Handhelds tab
     Add a HH
     Select the HH
-    Delete the HH

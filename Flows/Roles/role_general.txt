@@ -8,7 +8,7 @@ Resource          ../Login/login-logoff.txt
 Resource          ../../Config/Resource/general_resource.txt
 
 *** Variables ***
-@{Roles Rights}    View Only Administration    \    Self Service    Self Service
+@{Roles Rights}    View Only Administration    Self Service    Administrator
 ${Lack_Of_Privileges}    Invalid credentials or insufficient privileges
 
 *** Keywords ***
@@ -47,6 +47,7 @@ Add Role Member
     Add All
     Element should be enabled    ${Add_button}
     Add member
+    sleep    1
     Page should contain    ${search_user}
 
 Delete Role Member

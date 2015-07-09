@@ -18,10 +18,12 @@ Add a HH
     Find user
     Element should be enabled    ${HH_Look_New_button}
     HH Look Now
-    Page should contain    ${search_user}
+    sleep    2
     HH Add All
     Element should be enabled    ${HH_Add_button}
+    sleep    2
     HH Add
+    sleep    2
     Page should contain    ${search_user}
 
 Delete the HH
