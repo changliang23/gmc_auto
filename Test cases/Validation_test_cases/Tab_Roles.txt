@@ -20,6 +20,7 @@ Resource          ../../Pages/Roles/SelfServiceRights/sseditrights_page.txt
 Resource          ../../Pages/Roles/roles_page.txt
 Resource          ../../Pages/Roles/changeRole/change_role.txt
 Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
+Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
 
 *** Test Cases ***
 16311 User with manage custom handheld policies, software right
@@ -550,19 +551,16 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
     Go to Handhelds tab
     Element should be enabled    ${Add_Handhelds1}
     Add HH
-    sleep    1
-    Element should be enabled    ${HH_Add_button}
-    HH Add
-    set selenium timeout    2
+    sleep    2
     Location should be    ${GMC_URL}/addHandhelds.do
     Page should contain    Find user or device
     Find user
     Element should be enabled    ${HH_Look_New_button}
     HH Look Now
-    sleep    1
     Page should contain    ${search_user}
     HH Add All
-    sleep    2
+    Element should be enabled    ${HH_Add_button}
+    HH Add
     Page should contain    Not authorized to enable additional handhelds for a user.
     Sign Out
     set selenium timeout    1
@@ -854,7 +852,5 @@ Resource          ../../Pages/Settings/customSoftware/customsoftware_page.txt
 
 test
     Login
-    Go to Handhelds tab
-    Add a HH
-    Select the HH
-    Delete the HH
+    Go to Settings tab
+    Go to Policy
