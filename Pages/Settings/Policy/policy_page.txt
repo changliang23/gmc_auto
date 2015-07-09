@@ -1,0 +1,7 @@
+*** Variables ***
+${Policy_Sync_dropdownlist}    /html/body/div/div[1]/table/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[2]/select
+${Policy_Sync_time}    2 Minutes
+${policy_setting_save}    Save
+
+*** Keywords ***
+Update Policy Sync Time

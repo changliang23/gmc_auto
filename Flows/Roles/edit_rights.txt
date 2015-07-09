@@ -581,7 +581,7 @@ Update Roles and Description
     Input text    ${Edit_Role}    ${Update_Name}
     clear element text    ${Edit_Description}
     Input text    ${Edit_Description}    ${Update_Description}
-    Click Element    ${Save_button}
+    EditRole Save
     Page should contain    ${Update_Name}
     Page should contain    ${Update_Description}
 
@@ -591,5 +591,5 @@ Restore Administrator Roles and Description
     clear element text    ${Edit_Role}
     Input text    ${Edit_Role}    Administrator
     clear element text    ${Edit_Description}
-    Click Element    ${Save_button}
+    EditRole Save
     Page should contain    Administrator

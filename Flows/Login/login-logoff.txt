@@ -9,6 +9,7 @@ Resource          ../../Pages/Handhelds/handheldsDetails/handheldsdetails_page.t
 Resource          ../Policies/policy_general.txt
 Resource          ../Servers/servers_general.txt
 Resource          ../Settings/settings_general.txt
+Resource          ../Roles/role_general.txt
 
 *** Keywords ***
 Login
@@ -86,4 +87,6 @@ Login with Custom user_All rights
     Open Servers tab
     Refresh server list
     Open Settings tab
-    Update Policy Settings
+    Open Roles tab
+    select custom role
+    delete custom role

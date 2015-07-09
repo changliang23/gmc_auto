@@ -719,7 +719,6 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     Add Role Member
     Sign out
     Login with SS user
-    Page should contain    @{Roles Rights}[1]
     Go to    ${GMC_URL}/handhelds.do
     sleep    1
     SS user go to browsers/handhelds
@@ -742,7 +741,6 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
 1675_1 Search for handhelds - "Look For:" field validation
     [Setup]    Login->Roles
     Add custom role
-    Page should contain    @{Roles Rights}[0]
     Sign out
     Login
     Go to Roles tab
@@ -774,7 +772,9 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     sleep    2
     Select Domain
     Look For group
+    sleep    1
     Look Now
+    sleep    1
     Add All
     Add member
     Verify Administrator Rights
@@ -782,6 +782,7 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     Sign out
     group user login
     Sign out
+    Sleep    1
     [Teardown]    Delete Administrator Member
 
 1677 Delete user(s) or group(s) from a role
@@ -790,7 +791,6 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     Add Role Member
     Sign out
     Login with SS user
-    Page should contain    @{Roles Rights}[1]
     sign out
     Delete SS Member
     Sign out
@@ -810,6 +810,7 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     Select Domain
     Look For group
     Look Now
+    sleep    2
     Add All
     Add member
     Verify Administrator Rights
@@ -817,18 +818,28 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     Sign out
     group user login
     Sign out
+    sleep    1
     login
     Open Roles tab
+    sleep    1
     Go to Administrator
     Update Roles and Description
-    sleep    2
+    sleep    1
+    sign out
+    group user login
+    Sign out
+    sleep    1
+    login
+    go to roles tab
     Restore Administrator Roles and Description
     Sleep    2
     Verify Administrator Rights
     User have Administrator Rights
     Sign out
-    group user login
-    Sign out
+    Input Text    ${Username_id}    ${group_user}
+    Input Password
+    Input Domain
+    Click Sign In button
     [Teardown]    Delete Administrator member
 
 1679 Modify rights: for an exisiting user
@@ -856,6 +867,13 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
     Sign out
     Login with Custom user_All rights
     sleep    2
+    sign out
+    Location should be    ${GMC_URL}/login.do
+    Input Text    ${Username_id}    ${group_user}
+    Input Password
+    Input Domain
+    Click Sign In button
+    Page should contain    ${Lack_Of_Privileges}
 
 1680 Verify functionality of Service Adminstrator role
 
@@ -865,11 +883,14 @@ Resource          ../../Pages/Handhelds/addHandhelds/addhandhelds_page.txt
 
 test
     Login
+
 <<<<<<< HEAD
     Go to Handhelds tab
     Add a HH
     Select the HH
+
 =======
     Go to Settings tab
     Go to Policy
+
 >>>>>>> 94aa6bbdfd41d0b6b2d0348f134e32a1828ad0e2
